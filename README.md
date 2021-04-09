@@ -1,29 +1,76 @@
-# Create React Express App
+## Mood Ring App
+ Project description 
 
-## About This Boilerplate
+## Table of contents
+- [Mood Ring App](#mood-ring-app)
+- [Table of contents](#table-of-contents)
+- [General Info](#general-info)
+- [Technologies](#technologies)
+- [## Deployment (Heroku) - Live Link](#-deployment-heroku---live-link)
+- [Github Repo](#github-repo)
+- [Code Snippets](#code-snippets)
+- [Sources](#sources)
+- [Authors](#authors)
 
-This setup allows for a Node/Express/React app which can be easily deployed to Heroku.
+## General Info
+This application implements the following:
 
-The front-end React app will auto-reload as it's updated via webpack dev server, and the backend Express app will auto-reload independently with nodemon.
+* Uses a Node, Express server ********other dependencies here********
 
-## Starting the app locally
+* Backed by a **************name of DB here**************
 
-Start by installing front and backend dependencies. While in this directory, run the following command:
+* Utilizes both GET and POST routes for retrieving and adding new data
 
-```
-npm install
-```
+* Deployed using Heroku (with data)
 
-This should install node modules within the server and the client folder.
+* Utilizes at least one new library, package, or technology that we haven’t discussed
 
-After both installations complete, run the following command in your terminal:
+* Has a polished front end/UI
 
-```
-npm start
-```
+* Has have a folder structure that meets the MVC paradigm
 
-Your app should now be running on <http://localhost:3000>. The Express server should intercept any AJAX requests from the client.
+* Meet good quality coding standards (indentation, scoping, naming)
 
-## Deployment (Heroku)
+* Protects API keys in Node with environment variables
 
-To deploy, simply add and commit your changes, and push to Heroku. As is, the NPM scripts should take care of the rest.
+## Technologies
+* Javascript
+* HTML/CSS
+* JQuery
+* Node
+* NPM Express
+* NPM Express-Handlebars
+* NPM MySQL
+* NPM Sequelize
+* NPM Multer
+* Heroku
+* MySQL
+* MySQL Workbench
+
+## ## Deployment (Heroku) - Live Link
+- [Heroku](LINK HERE)
+
+## Github Repo
+- [Github Repo](https://github.com/haywah27/mood-ring.git)
+
+## Code Snippets
+
+
+
+## Sources
+Application enabled using the following sources:
+
+* [NPM Express](https://www.npmjs.com/package/express)
+* [NPM Passport](https://www.npmjs.com/package/passport)
+<!-- * [NPM Bcrypt](https://www.npmjs.com/package/bcryptjs)   -->
+
+## Authors
+Created by ***Names*** - feel free to contact us to collaborate on this project or any other project!
+<!-- 
+* [Sam's LinkedIn](https://www.linkedin.com/in/samuelerogers/)
+* [Josh's LinkedIn](https://www.linkedin.com/in/joshua-rehanek/)
+* [Aimee's LinkedIn](https://www.linkedin.com/in/aimee-mattson-bb060398/)
+
+* [Sam's Portfolio](https://samrogers15.github.io/Current_Portfolio/index.html)
+* [Josh's Portfolio](https://joshrehanek.github.io/my-portfolio/)
+* [Aimee's Portfolio](https://jinxdoll.github.io/HW-2-portfolio-mattsonaimee/) -->
