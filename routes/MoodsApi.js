@@ -1,5 +1,5 @@
 const Router = require("express").Router();
-const Note = require("../models/Mood");
+const Mood = require("../models/Mood");
 
 
 

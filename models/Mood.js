@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const moodSchema = new Schema({
     user: { type: String, unique: true},
-    emotion: { type: String, required: "Cant save an empty mood" },
+    expressions: { type: String, required: "Cant save an empty mood" },
 });
 
 
