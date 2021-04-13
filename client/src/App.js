@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { Navigation, Home, CaptureMood, NewMood, Login, SignUp } from "./components";
 
 import logo from "./logo.svg";
 import "./App.css";
