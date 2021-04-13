@@ -11,48 +11,28 @@ function Navigation(props) {
           </Link>
           <div>
             <ul class="navbar-nav ml-auto">
-              <li
-                class={`nav-item  ${
-                  props.location.pathname === "/" ? "active" : ""
-                }`}
-              >
+              <li class={`nav-item ${props.location.pathname === "/" ? "active" : ""}`}>
                 <Link class="nav-link" to="/">
                   Home
                   <span class="sr-only">(current)</span>
                 </Link>
               </li>
-              <li
-                class={`nav-item  ${
-                  props.location.pathname === "/moods" ? "active" : ""
-                }`}
-              >
+              <li class={`nav-item  ${props.location.pathname === "/moods" ? "active" : ""}`}>
                 <Link class="nav-link" to="/moods">
                   Capture Mood
                 </Link>
               </li>
-              <li
-                class={`nav-item  ${
-                  props.location.pathname === "/new-mood" ? "active" : ""
-                }`}
-              >
+              <li class={`nav-item  ${props.location.pathname === "/new-mood" ? "active" : ""}`}>
                 <Link class="nav-link" to="/new-mood">
                   New Mood
                 </Link>
               </li>
-              <li
-                class={`nav-item  ${
-                  props.location.pathname === "/Login" ? "active" : ""
-                }`}
-              >
+              <li class={`nav-item  ${props.location.pathname === "/Login" ? "active" : ""}`}>
                 <Link class="nav-link" to="/Login">
                   Login
                 </Link>
               </li>
-              <li
-                class={`nav-item  ${
-                  props.location.pathname === "/sign-up" ? "active" : ""
-                }`}
-              >
+              <li class={`nav-item  ${props.location.pathname === "/sign-up" ? "active" : ""}`}>
                 <Link class="nav-link" to="/sign-up">
                   Sign Up
                 </Link>

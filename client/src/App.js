@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Navigation from "./components/Nav/index";
-import Home from "./pages/Home"
-import CaptureMood from "./pages/CaptureMood"
-import NewMood from "./pages/NewMood"
-import Login from "./pages/Login"
-import SignUp from "./pages/SignUp"
-  // CaptureMood, NewMood, Login, SignUp } from "./pages"
+import Home from "./pages/Home";
+import CaptureMood from "./pages/CaptureMood";
+import NewMood from "./pages/NewMood";
+import Login from "./pages/Login";
+import SignUp from "./pages/SignUp";
+// CaptureMood, NewMood, Login, SignUp } from "./pages"
 
 import logo from "./logo.svg";
 import "./App.css";
@@ -27,34 +27,6 @@ function App() {
         </Switch>
       </Router>
     </div>
-
-    // <Router>
-    //   <div>
-    //     <Link to="/"> Home</Link>
-    //     <br />
-    //     <Link to="/moods"> All Moods</Link>
-    //     <br />
-    //     <Link to="/new-mood"> Check Mood</Link>
-    //     <br />
-    //     <Link to="/login"> Login</Link>
-    //     <br />
-    //     <Link to="/sign-up"> Sign Up</Link>
-    //   </div>
-    //   <Switch>
-    //     <Route path="/moods">
-    //         hello all moods page
-    //     </Route>
-    //     <Route path="/new-mood">
-    //         hello new-mood page
-    //     </Route>
-    //     <Route path="/login">
-    //         hello login page
-    //     </Route>
-    //     <Route path="/sign-up">
-    //         hello sign-up page
-    //     </Route>
-    //   </Switch>
-    // </Router>
   );
 }
 
