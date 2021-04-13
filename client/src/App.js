@@ -1,6 +1,8 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import { Navigation, Home, CaptureMood, NewMood, Login, SignUp } from "./components";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Navigation from "./components/Nav/index";
+import Home from "./pages/Home"
+  // CaptureMood, NewMood, Login, SignUp } from "./pages"
 
 import logo from "./logo.svg";
 import "./App.css";
@@ -9,16 +11,18 @@ function App() {
   const [moods, setMoods] = useState([]);
   const [reDownload, triggerReDownload] = useState("");
   return (
-    <Router>
-      <Navigation />
-      <Switch>
-        <Route path="/" exact component={() => <Home />} />
-        <Route path="/moods" exact component={() => <CaptureMood />} />
-        <Route path="/new-mood" exact component={() => <NewMood />} />
-        <Route path="/login" exact component={() => <Login />} />
-        <Route path="/sign-up" exact component={() => <SignUp />} />
-      </Switch>
-    </Router>
+    <div>
+      <Router>
+        <Navigation />
+        <Switch>
+          <Route path="/" exact component={() => <Home />} />
+          {/* <Route path="/moods" exact component={() => <CaptureMood />} />
+          <Route path="/new-mood" exact component={() => <NewMood />} />
+          <Route path="/login" exact component={() => <Login />} />
+          <Route path="/sign-up" exact component={() => <SignUp />} /> */}
+        </Switch>
+      </Router>
+    </div>
 
     // <Router>
     //   <div>
