@@ -1,8 +1,10 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
-import { Navbar, Nav } from 'react-bootstrap';
+import { Navbar, Nav, NavLink } from 'react-bootstrap';
+import "./nav.css"
 
 function Navigation() {
+
   return (
 //     <div className="navigation">
 //       <nav class="navbar navbar-expand navbar-dark bg-dark">
@@ -47,25 +49,37 @@ function Navigation() {
 
 
 <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-<Navbar.Brand href="/">Moody Times</Navbar.Brand>
-<Navbar.Toggle aria-controls="responsive-navbar-nav" />
-<Navbar.Collapse id="responsive-navbar-nav">
-  <Nav className="mr-auto">
-    {/* filler to align nav on right */}
-  </Nav>
-  <Nav>
-    <Nav.Link href="/">Home</Nav.Link>
-    <Nav.Link href="/new-mood">New Mood</Nav.Link>
-    {/* <Nav.Link href="/moods">Capture Mood</Nav.Link> */}
-    <Nav.Link href="login">Login</Nav.Link>
-    <Nav.Link href="sign-up">Sign Up</Nav.Link>
-  </Nav>
-</Navbar.Collapse>
+<nav className="navbar">
+    <NavLink
+      exact
+      activeClassName="navbar__link--active"
+      className="navbar__link"
+      href="/"
+    >
+      Home
+    </NavLink>
+    <NavLink
+      activeClassName="navbar__link--active"
+      className="navbar__link"
+      href="/new-mood"
+    >
+      New Mood
+    </NavLink>
+    <NavLink
+      activeClassName="navbar__link--active"
+      className="navbar__link"
+      href="/login"
+    >
+      Login
+    </NavLink>
+  </nav>
+);
 </Navbar>
 
 
   );
 }
+
 
 export default Navigation;
 
