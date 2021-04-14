@@ -5,7 +5,7 @@ import Home from "./pages/Home";
 import CaptureMood from "./pages/CaptureMood";
 import NewMood from "./pages/NewMood";
 import Login from "./pages/Login";
-import SignUp from "./pages/SignUp";
+import Logout from "./pages/Logout";
 // CaptureMood, NewMood, Login, SignUp } from "./pages"
 
 import logo from "./logo.svg";
@@ -23,7 +23,7 @@ function App() {
           <Route path="/moods" exact component={() => <CaptureMood />} />
           <Route path="/new-mood" exact component={() => <NewMood />} />
           <Route path="/login" exact component={() => <Login />} />
-          <Route path="/sign-up" exact component={() => <SignUp />} />
+          <Route path="/logout" exact component={() => <Logout />} />
         </Switch>
       </Router>
     </div>
