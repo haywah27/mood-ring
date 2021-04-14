@@ -1,6 +1,6 @@
 import React from "react";
 import "./Home.css";
-import { Jumbotron, Container } from "react-bootstrap";
+import { Jumbotron, Container, Button } from "react-bootstrap";
 
 function Home() {
   return (
@@ -13,6 +13,13 @@ function Home() {
               We work to determine your current mood and provide content to
               match..Blahblahblah. WIP.
             </h5>
+            <Button
+              // onClick={handleButtonClick}
+              type="success"
+              className="input-lg"
+            >
+              Search
+            </Button>
           </Container>
         </Jumbotron>
       </Container>
