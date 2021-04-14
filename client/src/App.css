@@ -18,6 +18,11 @@
   font-size: large;
 }
 
+body { 
+  background: url(https://media.giphy.com/media/mG2pQXAWNl4Vt77Kef/giphy.gif) no-repeat center center fixed; 
+  background-size: cover;
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
