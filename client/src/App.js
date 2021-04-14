@@ -4,10 +4,17 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import logo from "./logo.svg";
 import "./App.css";
 
+import Login1 from "./components/googleLogin1";
+import Login2 from "./components/googleLogin2";
+
+
 function App() {
+ 
+  
   const [moods, setMoods] = useState([]);
   const [reDownload, triggerReDownload] = useState("");
   return (
+  
     <Router>
       <div>
         <Link to="/"> Home</Link>
