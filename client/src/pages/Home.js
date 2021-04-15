@@ -17,7 +17,7 @@ function Home() {
             <Button
               href="/new-mood"
               className="getStartedButton"
-              size="lg"
+              size="huge"
             >
               Get Started
             </Button>
