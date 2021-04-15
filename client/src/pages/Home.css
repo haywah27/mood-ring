@@ -19,9 +19,9 @@
   }
 
   .getStartedButton {
-    background-color: #468499;
+    background-color: #301934;
     border: none;
   }
   .getStartedButton:hover {
-    background-color: #301934;
+    background-color: #468499;
   }

@@ -15,7 +15,7 @@ function Home() {
             </h5>
             <br />
             <Button
-              // onClick={handleButtonClick}
+              href="/new-mood"
               className="getStartedButton"
               size="lg"
             >
