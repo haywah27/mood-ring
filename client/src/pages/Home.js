@@ -13,12 +13,13 @@ function Home() {
               We work to determine your current mood and provide content to
               match..Blahblahblah. WIP.
             </h5>
+            <br />
             <Button
               // onClick={handleButtonClick}
-              type="success"
-              className="input-lg"
+              className="getStartedButton"
+              size="lg"
             >
-              Search
+              Get Started
             </Button>
           </Container>
         </Jumbotron>

@@ -17,3 +17,11 @@
   .body{
 
   }
+
+  .getStartedButton {
+    background-color: #468499;
+    border: none;
+  }
+  .getStartedButton:hover {
+    background-color: #301934;
+  }
