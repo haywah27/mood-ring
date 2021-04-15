@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Navigation from "./components/Nav/index";
 import Home from "./pages/Home";
@@ -7,14 +7,11 @@ import NewMood from "./pages/NewMood";
 import Login from "./pages/Login";
 import Logout from "./pages/Logout";
 import User from "./pages/User";
-// CaptureMood, NewMood, Login, SignUp } from "./pages"
-
-import logo from "./logo.svg";
 import "./App.css";
 
 function App() {
-  const [moods, setMoods] = useState([]);
-  const [reDownload, triggerReDownload] = useState("");
+  // const [moods, setMoods] = useState([]);
+  // const [reDownload, triggerReDownload] = useState("");
   return (
     <div>
       <Router>

@@ -14,11 +14,7 @@ function Home() {
               match..Blahblahblah. WIP.
             </h5>
             <br />
-            <Button
-              href="/new-mood"
-              className="getStartedButton"
-              size="huge"
-            >
+            <Button href="/new-mood" className="getStartedButton" size="huge">
               Get Started
             </Button>
           </Container>
