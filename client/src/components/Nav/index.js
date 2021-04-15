@@ -84,37 +84,31 @@ function Navigation() {
 
   ); */
 
-    <Navbar collapseOnSelect expand="lg" className="nav">
+    <Navbar collapseOnSelect expand="lg" className="nav" variant="dark">
       <Navbar.Brand href="/" className="navbar-header">Mood Ring</Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-      <Navbar.Collapse id="responsive-navbar-nav">
+      <Navbar.Collapse id="responsive-navbar-nav" bg="dark" variant="dark">
         <Nav className="mr-auto"></Nav>
         <Nav>
           <Nav.Link
-            exact
-            // activeClassName="navbar__link--active"
             className="navbar-link"
             href="/"
           >
             Home
           </Nav.Link>
           <Nav.Link
-            // activeClassName="navbar__link--active"
             className="navbar-link"
             href="/new-mood"
           >
             New Mood
           </Nav.Link>
           <Nav.Link
-            // activeClassName="navbar__link--active"
             className="navbar-link"
             href="/login"
           >
             Login
           </Nav.Link>
           <Nav.Link
-            exact
-            // activeClassName="navbar-link--active"
             className="navbar-link"
             href="/User"
           >

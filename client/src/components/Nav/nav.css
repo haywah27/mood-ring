@@ -3,13 +3,14 @@
   justify-content: center;
   align-items: center;
   border-radius: 4px;
-  background-color: #eceff1;
+  background-color: #301934;
+  
 }
 .navbar-header {
-  color: #181818!important;
+  color: #eceff1!important;
   margin: 0.1em;
   font-size: 2em;
-  font-weight: 550!important;
+  font-weight: 400!important;
   letter-spacing: 0.1em;
   font-family: "Courier New";
 }
@@ -20,7 +21,7 @@
   font-family: "Courier New";
   letter-spacing: 0.1em;
   text-indent: 0.3em;
-  color: #181818!important;
+  color: #eceff1!important;
   padding: .5em;
 }
 
@@ -33,3 +34,6 @@
   transform: translateY(-2px);
   color: #468499 !important;
 }
+
+/* nice blue color */
+/* color: #468499 !important; */
