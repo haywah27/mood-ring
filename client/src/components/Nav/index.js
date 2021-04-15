@@ -72,6 +72,14 @@ function Navigation() {
     >
       Login
     </NavLink>
+    <NavLink
+      exact
+      activeClassName="navbar__link--active"
+      className="navbar__link"
+      href="/User"
+    >
+      My Profile
+    </NavLink>
   </nav>
 );
 </Navbar>
