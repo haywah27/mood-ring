@@ -12,9 +12,12 @@
 }
 
 .title {
+  font-size: 3em;
 }
 
 .body {
+  font-size: 1.4em;
+  line-height: 40px;
 }
 
 .btn-huge {
