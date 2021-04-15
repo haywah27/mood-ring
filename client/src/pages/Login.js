@@ -7,8 +7,8 @@ export class Login extends React.Component {
   
 
 responseGoogle=(response) =>{
-  console.log(response);
-  console.log(response.profileObj);
+  console.log("google res", response);
+  console.log("google portfolioOBJ",response.profileObj);
 }
 
 
