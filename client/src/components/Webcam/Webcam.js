@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import WebcamCapture from "./WebcamCapture";
 import { Button } from "react-bootstrap";
 import "./Webcam.css";
+let expression = "";
 
 function WebcamFinal() {
   const [moodState, setMoodState] = useState([]);
@@ -14,7 +15,7 @@ function WebcamFinal() {
         "An error has occured. To avoid such errors, please make sure your face is clearly visable and is in the center of the screen"
       );
     } else {
-      let expression = "";
+      
 
       const angry = moodState[0].expressions.angry;
       const disgusted = moodState[0].expressions.disgusted;
@@ -113,6 +114,7 @@ function WebcamFinal() {
         <WebcamCapture setMoodState={setMoodState} />
 
         <Button className="moodButton" onClick={click}>Check Mood</Button>
+        
       </div>
 
   );
