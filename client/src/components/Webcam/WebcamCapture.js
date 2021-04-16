@@ -42,7 +42,7 @@ const WebcamCapture = ({ setMoodState }) => {
       <br />
       <img className="border" src={externalImgSrc.source} width="720px" height="406px" id="imageUpload" alt="This will be your face"/>
       <br />
-      <Button onClick={capture}>Capture photo</Button>
+      <Button className="moodButton" onClick={capture}>Capture photo</Button>
     </>
   );
 };

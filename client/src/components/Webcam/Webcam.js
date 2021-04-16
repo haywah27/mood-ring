@@ -112,7 +112,7 @@ function WebcamFinal() {
       <div className="WebcamFinal">
         <WebcamCapture setMoodState={setMoodState} />
 
-        <Button onClick={click}>Check Mood</Button>
+        <Button className="moodButton" onClick={click}>Check Mood</Button>
       </div>
 
   );
