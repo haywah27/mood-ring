@@ -16,16 +16,7 @@ function Home() {
 
           </Container>
         </Jumbotron>
-        <Jumbotron className="dimension text-center" fluid>
-          <Container>
-            <h1 className="title">Your mood is: *insert mood reading*</h1>
-            <br />
-            <h3 className="subtitle">Here's some content that might be helpful:</h3>
-
-            {/* insert remedy return */}
-            
-          </Container>
-        </Jumbotron>
+        
       </Container>
     </div>
   );
