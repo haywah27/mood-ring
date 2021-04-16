@@ -11,14 +11,6 @@
   line-height: 40px;
 }
 
-.btn-login {
-  padding: 1rem 2rem;
-  font-size: 1.5rem;
-  box-shadow: 0px 0px 10px 0px #301934;
-  color: #301934;
-  border-radius: 7px;
-}
-
 .loginButton {
   background-color: #fa8072;
   opacity: 1 !important;

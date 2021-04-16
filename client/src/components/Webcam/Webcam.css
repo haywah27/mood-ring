@@ -1,0 +1,21 @@
+.WebcamFinal {
+    padding: 1rem;
+}
+
+.border{
+    border-radius: 20px;
+}
+
+.moodButton {
+    background-color: #fa8072;
+    opacity: 1 !important;
+    padding: .5rem 1rem;
+    font-size: 1.25rem;
+    border: none;
+    color: #301934;
+    margin: .5rem;
+}
+
+.moodButton:hover {
+    background-color: #468499;
+}

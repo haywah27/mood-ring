@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Webcam from "react-webcam";
-import FaceAPI from './FaceAPI'
+import FaceAPI from './FaceAPI';
+import { Button } from "react-bootstrap";
+import "./Webcam.css";
 
 const videoConstraints = {
   width: 1280,
@@ -30,14 +32,17 @@ const WebcamCapture = ({ setMoodState }) => {
     <>
       <Webcam
         audio={false}
-        height={720}
+        height={406}
         ref={webcamRef}
         screenshotFormat="image/jpeg"
         width={720}
         videoConstraints={videoConstraints}
+        className="border"
       />
-      <img src={externalImgSrc.source} width="780px" height="520px" id="imageUpload" alt="This is your face"/>
-      <button onClick={capture}>Capture photo</button>
+      <br />
+      <img className="border" src={externalImgSrc.source} width="720px" height="406px" id="imageUpload" alt="This will be your face"/>
+      <br />
+      <Button className="moodButton" onClick={capture}>Capture photo</Button>
     </>
   );
 };
