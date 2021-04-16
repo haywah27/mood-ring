@@ -10,6 +10,11 @@ function WebcamFinal() {
 
   function click() {
 
+    if(moodState.length === 0) {
+      alert('An error has occured. To avoid such errors, please make sure your face is clearly visable and is in the center of the screen')
+      
+    } else {
+
     let expression = '';
 
     const angry = moodState[0].expressions.angry
@@ -51,6 +56,7 @@ function WebcamFinal() {
     } else {
         alert("An error has occured")
     }
+  }
   }
   
   return (
