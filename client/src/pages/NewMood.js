@@ -1,6 +1,7 @@
 import React from "react";
 import "./NewMood.css";
 import { Jumbotron, Container, Button } from "react-bootstrap";
+import Webcam from '../components/Webcam/Webcam'
 
 function Home() {
   return (
@@ -11,7 +12,7 @@ function Home() {
             <h1 className="title">Mood Catcher</h1>
             <h5 className="body">How it works: <br /> 1. Click the button to start the live mood reader<br /> 2. Click the camera icon to capture your current mood<br /> 3. Explore the remedy or boost to your mood<br /> 4. Login to save your mood!</h5>
 
-            {/* insert video feed/ screen capture */}
+            <Webcam className="webcam/>
 
           </Container>
         </Jumbotron>

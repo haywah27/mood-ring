@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import WebcamCapture from './WebcamCapture'
+import "./Webcam.css"
 
 function WebcamFinal() {
 
