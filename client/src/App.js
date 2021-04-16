@@ -15,7 +15,8 @@ function App() {
   // const [reDownload, triggerReDownload] = useState("");
   return (
     <div>
-      <Router>
+      <Webcam />
+      {/* <Router>
         <Navigation />
         <Switch>
           <Route path="/" exact component={() => <Home />} />
@@ -25,7 +26,7 @@ function App() {
           <Route path="/logout" exact component={() => <Logout />} />
           <Route path="/User" exact component={() => <User />} />
         </Switch>
-      </Router>
+      </Router> */}
     </div>
   );
 }
