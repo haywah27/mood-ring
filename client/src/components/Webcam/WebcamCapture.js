@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Webcam from "react-webcam";
-import FaceAPI from '../js/faceAPI'
+import FaceAPI from './FaceAPI'
 
 const videoConstraints = {
   width: 1280,
@@ -8,16 +8,20 @@ const videoConstraints = {
   facingMode: "user"
 };
 
-const WebcamCapture = () => {
+const WebcamCapture = ({ setMoodState }) => {
 
-  let [externalImgSrc, setExternal] = useState('');
+  const [externalImgSrc, setExternal] = useState({
+    source: '',
+  });
 
   const webcamRef = React.useRef(null);
 
   const capture = React.useCallback(
     () => {
       const imageSrc = webcamRef.current.getScreenshot();
-      setExternal = imageSrc
+      const imgEl = document.getElementById('imageUpload')
+      setExternal({ source: imageSrc })
+      FaceAPI(imgEl).then(detections => setMoodState(detections))
     },
     [webcamRef]
   );
@@ -32,7 +36,7 @@ const WebcamCapture = () => {
         width={720}
         videoConstraints={videoConstraints}
       />
-      <img src={externalImgSrc} width="780px" height="520px" id="imageUpload"/>
+      <img src={externalImgSrc.source} width="780px" height="520px" id="imageUpload" alt="This is your face"/>
       <button onClick={capture}>Capture photo</button>
     </>
   );
