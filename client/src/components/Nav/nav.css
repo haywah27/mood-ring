@@ -1,0 +1,41 @@
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  background-color: #301934;
+  
+}
+.navbar-header {
+  color: #eceff1!important;
+  margin: 0.1em;
+  padding-right: .5em;
+  padding-left: .3em;
+  font-size: 2em;
+  font-weight: 400!important;
+  letter-spacing: 0.1em;
+  font-family: "Courier New";
+}
+
+.navbar-link {
+  margin: 0.1em;
+  font-size: 1.4em;
+  font-family: "Courier New";
+  letter-spacing: 0.1em;
+  text-indent: 0.3em;
+  color: #eceff1!important;
+  padding: .5em;
+}
+
+.navbar-link:hover{
+  transform: translateY(-2px);
+  color: #468499 !important;
+}
+
+.navbar-header:hover{
+  transform: translateY(-2px);
+  color: #468499 !important;
+}
+
+/* nice blue color */
+/* color: #468499 !important; */
