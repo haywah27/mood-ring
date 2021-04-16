@@ -5,9 +5,11 @@
   "private": true,
   "proxy": "http://localhost:3001/",
   "dependencies": {
+    "face-api.js": "^0.22.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.3"
+    "react-scripts": "3.4.3",
+    "react-webcam": "^5.2.3"
   },
   "scripts": {
     "start": "react-scripts start",

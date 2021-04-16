@@ -7,6 +7,7 @@ import NewMood from "./pages/NewMood";
 import Login from "./pages/Login";
 import Logout from "./pages/Logout";
 import User from "./pages/User";
+import Webcam from './components/Webcam/Webcam'
 import "./App.css";
 
 function App() {
