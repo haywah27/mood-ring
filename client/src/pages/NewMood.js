@@ -1,7 +1,7 @@
 import React from "react";
 import "./NewMood.css";
 import { Jumbotron, Container, Button } from "react-bootstrap";
-import Webcam from "../components/Webcam/Webcam";
+import Webcam from "../components/Webcam/DisplayMoods";
 
 function Home() {
   return (
