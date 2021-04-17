@@ -1,164 +1,68 @@
 import React, { useState } from "react";
-import WebcamCapture from "./WebcamCapture";
+import Webcam from "react-webcam";
+import FaceAPI from "./FaceAPI";
 import { Button } from "react-bootstrap";
-import LoadingSpinner from "../Spinner/LoadingSpinner";
 import "./Webcam.css";
 
-function WebcamFinal() {
-  const [moodState, setMoodState] = useState([]);
+const videoConstraints = {
+  width: 1280,
+  height: 720,
+  facingMode: "user",
+};
 
-  let expression = "";
-  let expressionMsg = "";
+const WebcamCapture = ({ setMoodState, setIsLoaded, setIsLoading }) => {
+  const [externalImgSrc, setExternal] = useState({
+    source: "",
+  });
 
-  const [expressionState, setExpressionState] = useState("");
-  const [expressionMsgState, setExpressionMsgState] = useState("");
 
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
 
-  console.log(moodState);
+  const webcamRef = React.useRef(null);
 
-  function click() {
-    if (moodState.length === 0) {
-      alert(
-        "An error has occurred. To avoid such errors, please make sure your face is clearly visible and is in the center of the screen."
-      );
-    } else {
-      const angry = moodState[0].expressions.angry;
-      const disgusted = moodState[0].expressions.disgusted;
-      const fearful = moodState[0].expressions.fearful;
-      const happy = moodState[0].expressions.happy;
-      const neutral = moodState[0].expressions.neutral;
-      const sad = moodState[0].expressions.sad;
-      const surprised = moodState[0].expressions.surprised;
-
-      if (
-        angry > disgusted &&
-        angry > fearful &&
-        angry > happy &&
-        angry > neutral &&
-        angry > sad &&
-        angry > surprised
-      ) {
-        console.log("Your mood is: Angry");
-        expression = "Angry";
-        expressionMsg =
-          "Would you like to check out some cat memes to calm you down a bit?";
-        setExpressionState(expression);
-        setExpressionMsgState(expressionMsg);
-        console.log(expression);
-      } else if (
-        disgusted > angry &&
-        disgusted > fearful &&
-        disgusted > happy &&
-        disgusted > neutral &&
-        disgusted > sad &&
-        disgusted > surprised
-      ) {
-        console.log("Your mood is: Disgusted");
-        expression = "Disgusted";
-        expressionMsg =
-          "Would you like to check out some videos to  make that gross feeling go away?";
-        setExpressionState(expression);
-        setExpressionMsgState(expressionMsg);
-        console.log(expression);
-      } else if (
-        fearful > angry &&
-        fearful > disgusted &&
-        fearful > happy &&
-        fearful > neutral &&
-        fearful > sad &&
-        fearful > surprised
-      ) {
-        console.log("Your mood is: Fearful");
-        expression = "Fearful";
-        expressionMsg =
-          "Would you like to check out some videos that will help you tackle that fear?";
-        setExpressionState(expression);
-        setExpressionMsgState(expressionMsg);
-        console.log(expression);
-      } else if (
-        happy > angry &&
-        happy > disgusted &&
-        happy > fearful &&
-        happy > neutral &&
-        happy > sad &&
-        happy > surprised
-      ) {
-        console.log("Your mood is: Happy");
-        expression = "Happy";
-        expressionMsg =
-          "Alright!! How about some funny cat videos to keep that GREAT mood going?";
-        setExpressionState(expression);
-        setExpressionMsgState(expressionMsg);
-        console.log(expression);
-      } else if (
-        neutral > angry &&
-        neutral > disgusted &&
-        neutral > fearful &&
-        neutral > happy &&
-        neutral > sad &&
-        neutral > surprised
-      ) {
-        console.log("Your mood is: Neutral");
-        expression = "Neutral";
-        expressionMsg =
-          "We have just the right thing to give that mood a jump start, would you like to check it out?";
-        setExpressionState(expression);
-        setExpressionMsgState(expressionMsg);
-        console.log(expression);
-      } else if (
-        sad > angry &&
-        sad > disgusted &&
-        sad > fearful &&
-        sad > happy &&
-        sad > neutral &&
-        sad > surprised
-      ) {
-        console.log("Your mood is: Sad");
-        expression = "Sad";
-        expressionMsg =
-          "Don't worry, be HAPPY!.We can turn that frown, upside down! Would you like to check out some memes or videos to help crack a smile?";
-        setExpressionState(expression);
-        setExpressionMsgState(expressionMsg);
-        console.log(expression);
-      } else if (
-        surprised > angry &&
-        surprised > disgusted &&
-        surprised > fearful &&
-        surprised > happy &&
-        surprised > neutral &&
-        surprised > sad
-      ) {
-        console.log("Your mood is: Surprised");
-        expression = "Surprised";
-        expressionMsg =
-          "Uh oh, did you see a ghost? We have some jokes that might have a underlying element of surprise. Would you like to check them out?";
-        setExpressionState(expression);
-        setExpressionMsgState(expressionMsg);
-        console.log(expression);
-      } else {
-        alert("An error has occurred");
-      }
-    }
-  }
+  const capture = React.useCallback(() => {
+    const imageSrc = webcamRef.current.getScreenshot();
+    const imgEl = document.getElementById("imageUpload");
+    setExternal({ source: imageSrc });
+    setIsLoaded(false);
+    setIsLoading(true);
+    FaceAPI(imgEl).then((detections) => {
+      setMoodState(detections);
+      setIsLoaded(true);
+      setIsLoading(false);
+    });
+  }, [webcamRef]);
 
   return (
-    <div className="WebcamFinal">
-      <WebcamCapture setIsLoaded= {setIsLoaded} setIsLoading= {setIsLoading} setMoodState={setMoodState} />
-
-      {isLoaded && (
-        <>
-        <Button className="moodButton" onClick={click}>
-          Check Mood
-        </Button>
-         <div className="subtitle">Your Current Mood Is: {expressionState}</div>
-         </>
-      )}
-    {isLoading && <LoadingSpinner/>}
-     
-    </div>
+    <>
+      <Webcam
+        audio={false}
+        height={406}
+        ref={webcamRef}
+        screenshotFormat="image/jpeg"
+        width={720}
+        videoConstraints={videoConstraints}
+        className="border"
+      />
+      <br />
+      <img
+        className="border"
+        src={externalImgSrc.source}
+        width="720px"
+        height="406px"
+        id="imageUpload"
+        alt="Face will render here"
+      />
+      <br />
+      <Button
+        className="moodButton"
+        onClick={() => {
+          capture();
+        }}
+      >
+        Capture photo
+      </Button>
+    </>
   );
-}
+};
 
-export default WebcamFinal;
+export default WebcamCapture;
