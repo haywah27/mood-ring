@@ -24,7 +24,6 @@ function Home() {
         <Jumbotron className="dimension text-center" fluid>
           <Container>
             <div className="subtitle">Here's some relevant content:</div>
-
             {/* insert remedy return */}
           </Container>
         </Jumbotron>
