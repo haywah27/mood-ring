@@ -17,7 +17,7 @@ function WebcamFinal() {
   function click() {
     if (moodState.length === 0) {
       alert(
-        "An error has occurred. To avoid such errors, please make sure your face is clearly visible and is in the center of the screen"
+        "An error has occurred. To avoid such errors, please make sure your face is clearly visible and is in the center of the screen."
       );
     } else {
       const angry = moodState[0].expressions.angry;
@@ -37,7 +37,7 @@ function WebcamFinal() {
         angry > surprised
       ) {
         console.log("Your mood is: Angry");
-        expression = "Angry.";
+        expression = "Angry";
         expressionMsg =
           "Would you like to check out some cat memes to calm you down a bit?";
         setExpressionState(expression);
@@ -52,7 +52,7 @@ function WebcamFinal() {
         disgusted > surprised
       ) {
         console.log("Your mood is: Disgusted");
-        expression = "Disgusted.";
+        expression = "Disgusted";
         expressionMsg =
           "Would you like to check out some videos to  make that gross feeling go away?";
         setExpressionState(expression);
@@ -147,7 +147,7 @@ function WebcamFinal() {
         Check Mood
       </Button>
 
-      <div className="expression">Your Current Mood Is: {expressionState} </div>
+      <div className="expression">Your Current Mood is: {expressionState} </div>
       <div>
         <div className="expressionMsg">
           {expressionMsgState}
