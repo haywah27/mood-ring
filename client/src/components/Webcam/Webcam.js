@@ -39,7 +39,7 @@ function WebcamFinal() {
         console.log("Your mood is: Angry");
         expression = "Angry.";
         expressionMsg =
-          "Would you like to check out some cat memes to calm you down a bit? Click on the Moody Times button below.";
+          "Would you like to check out some cat memes to calm you down a bit?";
         setExpressionState(expression);
         setExpressionMsgState(expressionMsg);
         console.log(expression);
@@ -54,7 +54,7 @@ function WebcamFinal() {
         console.log("Your mood is: Disgusted");
         expression = "Disgusted.";
         expressionMsg =
-          "Would you like to check out some videos to  make that gross feeling go away? Click on the Moody Times button below.";
+          "Would you like to check out some videos to  make that gross feeling go away?";
         setExpressionState(expression);
         setExpressionMsgState(expressionMsg);
         console.log(expression);
@@ -69,7 +69,7 @@ function WebcamFinal() {
         console.log("Your mood is: Fearful");
         expression = "Fearful";
         expressionMsg =
-          "Would you like to check out some videos that will help you tackle that fear? Click on the Moody Times button below.";
+          "Would you like to check out some videos that will help you tackle that fear?";
         setExpressionState(expression);
         setExpressionMsgState(expressionMsg);
         console.log(expression);
@@ -84,7 +84,7 @@ function WebcamFinal() {
         console.log("Your mood is: Happy");
         expression = "Happy";
         expressionMsg =
-          "Alright!! How about some funny cat videos to keep that GREAT mood going? Click on the Moody Times button below.";
+          "Alright!! How about some funny cat videos to keep that GREAT mood going?";
         setExpressionState(expression);
         setExpressionMsgState(expressionMsg);
         console.log(expression);
@@ -99,7 +99,7 @@ function WebcamFinal() {
         console.log("Your mood is: Neutral");
         expression = "Neutral";
         expressionMsg =
-          "We have just the right thing to give that mood a jump start, would you like to check it out? Click on the Moody Times button below.";
+          "We have just the right thing to give that mood a jump start, would you like to check it out?";
         setExpressionState(expression);
         setExpressionMsgState(expressionMsg);
         console.log(expression);
@@ -114,7 +114,7 @@ function WebcamFinal() {
         console.log("Your mood is: Sad");
         expression = "Sad";
         expressionMsg =
-          "Don't worry, be HAPPY!.We can turn that frown, upside down! Would you like to check out some memes or videos to help crack a smile? Click on the Moody Times button below.";
+          "Don't worry, be HAPPY!.We can turn that frown, upside down! Would you like to check out some memes or videos to help crack a smile?";
         setExpressionState(expression);
         setExpressionMsgState(expressionMsg);
         console.log(expression);
@@ -129,7 +129,7 @@ function WebcamFinal() {
         console.log("Your mood is: Surprised");
         expression = "Surprised";
         expressionMsg =
-          "Uh oh, did you see a ghost? We have some jokes that might have a underlying element of surprise. Would you like to check them out? Click on the Moody Times button below.";
+          "Uh oh, did you see a ghost? We have some jokes that might have a underlying element of surprise. Would you like to check them out?";
         setExpressionState(expression);
         setExpressionMsgState(expressionMsg);
         console.log(expression);
