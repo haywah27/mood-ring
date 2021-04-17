@@ -8,8 +8,10 @@ function WebcamFinal() {
   const [moodState, setMoodState] = useState([]);
 
   let expression = "";
+  let expressionMsg = "";
 
   const [expressionState, setExpressionState] = useState("");
+  const [expressionMsgState, setExpressionMsgState] = useState("");
 
   const [isLoaded, setIsLoaded] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -19,7 +21,7 @@ function WebcamFinal() {
   function click() {
     if (moodState.length === 0) {
       alert(
-        "An error has occured. To avoid such errors, please make sure your face is clearly visable and is in the center of the screen"
+        "An error has occurred. To avoid such errors, please make sure your face is clearly visible and is in the center of the screen."
       );
     } else {
       const angry = moodState[0].expressions.angry;
@@ -40,7 +42,10 @@ function WebcamFinal() {
       ) {
         console.log("Your mood is: Angry");
         expression = "Angry";
+        expressionMsg =
+          "Would you like to check out some cat memes to calm you down a bit?";
         setExpressionState(expression);
+        setExpressionMsgState(expressionMsg);
         console.log(expression);
       } else if (
         disgusted > angry &&
@@ -51,8 +56,11 @@ function WebcamFinal() {
         disgusted > surprised
       ) {
         console.log("Your mood is: Disgusted");
-        expression = "Digusted";
+        expression = "Disgusted";
+        expressionMsg =
+          "Would you like to check out some videos to  make that gross feeling go away?";
         setExpressionState(expression);
+        setExpressionMsgState(expressionMsg);
         console.log(expression);
       } else if (
         fearful > angry &&
@@ -64,7 +72,10 @@ function WebcamFinal() {
       ) {
         console.log("Your mood is: Fearful");
         expression = "Fearful";
+        expressionMsg =
+          "Would you like to check out some videos that will help you tackle that fear?";
         setExpressionState(expression);
+        setExpressionMsgState(expressionMsg);
         console.log(expression);
       } else if (
         happy > angry &&
@@ -76,7 +87,10 @@ function WebcamFinal() {
       ) {
         console.log("Your mood is: Happy");
         expression = "Happy";
+        expressionMsg =
+          "Alright!! How about some funny cat videos to keep that GREAT mood going?";
         setExpressionState(expression);
+        setExpressionMsgState(expressionMsg);
         console.log(expression);
       } else if (
         neutral > angry &&
@@ -88,7 +102,10 @@ function WebcamFinal() {
       ) {
         console.log("Your mood is: Neutral");
         expression = "Neutral";
+        expressionMsg =
+          "We have just the right thing to give that mood a jump start, would you like to check it out?";
         setExpressionState(expression);
+        setExpressionMsgState(expressionMsg);
         console.log(expression);
       } else if (
         sad > angry &&
@@ -100,7 +117,10 @@ function WebcamFinal() {
       ) {
         console.log("Your mood is: Sad");
         expression = "Sad";
+        expressionMsg =
+          "Don't worry, be HAPPY!.We can turn that frown, upside down! Would you like to check out some memes or videos to help crack a smile?";
         setExpressionState(expression);
+        setExpressionMsgState(expressionMsg);
         console.log(expression);
       } else if (
         surprised > angry &&
@@ -112,10 +132,13 @@ function WebcamFinal() {
       ) {
         console.log("Your mood is: Surprised");
         expression = "Surprised";
+        expressionMsg =
+          "Uh oh, did you see a ghost? We have some jokes that might have a underlying element of surprise. Would you like to check them out?";
         setExpressionState(expression);
+        setExpressionMsgState(expressionMsg);
         console.log(expression);
       } else {
-        alert("An error has occured");
+        alert("An error has occurred");
       }
     }
   }
