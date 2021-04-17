@@ -7,7 +7,7 @@ import NewMood from "./pages/NewMood";
 import Login from "./pages/Login";
 import Logout from "./pages/Logout";
 import User from "./pages/User";
-import Webcam from './components/Webcam/Webcam'
+import Webcam from "./components/Webcam/Webcam";
 import "./App.css";
 
 function App() {
@@ -15,7 +15,6 @@ function App() {
   // const [reDownload, triggerReDownload] = useState("");
   return (
     <div>
-      
       <Router>
         <Navigation />
         <Switch>
@@ -24,7 +23,7 @@ function App() {
           <Route path="/new-mood" exact component={() => <NewMood />} />
           <Route path="/login" exact component={() => <Login />} />
           <Route path="/logout" exact component={() => <Logout />} />
-          <Route path="/User" exact component={() => <User />} />
+          <Route path="/user" exact component={() => <User />} />
         </Switch>
       </Router>
     </div>
