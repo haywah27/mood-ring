@@ -1,4 +1,3 @@
 module.exports = {
-    Mood: require("./Mood")
-  };
-  
+  Mood: require("./Mood"),
+};
