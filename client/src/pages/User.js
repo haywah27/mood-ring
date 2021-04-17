@@ -8,7 +8,7 @@ export class User extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      person: {
+      id: {
         name: "Wolverine, X-Men",
         biography:
           "Founder, X-style Hair salon & Spa. had a hard day fighting invading mutants ? Let our hair designers whisk you away with killer style! Graduate of Metal Nail Salons. Literally.",
@@ -25,7 +25,7 @@ export class User extends React.Component {
     return (
       <div className="User">
         <Image src={this.state.image} />
-        <Profile person={this.state.person} quote={this.state.quote} />
+        <Profile id={this.state.id} quote={this.state.quote} />
       </div>
     );
   }
@@ -42,8 +42,8 @@ function Image(props) {
 function Profile(props) {
   return (
     <div className="Profile">
-      <h1 className="Name">{props.person.name}</h1>
-      <p className="Bio">{props.person.biography}</p>
+      <h1 className="Name">{props.id.name}</h1>
+      <p className="Bio">{props.id.biography}</p>
       <div className="Quote">
         <blockquote>&ldquo; {props.quote.content} &rdquo;</blockquote>
         <div className="byline">&mdash; {props.quote.source}</div>
