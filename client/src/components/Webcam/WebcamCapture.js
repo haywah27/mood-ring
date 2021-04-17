@@ -1,32 +1,28 @@
 import React, { useState } from "react";
 import Webcam from "react-webcam";
-import FaceAPI from './FaceAPI';
+import FaceAPI from "./FaceAPI";
 import { Button } from "react-bootstrap";
 import "./Webcam.css";
 
 const videoConstraints = {
   width: 1280,
   height: 720,
-  facingMode: "user"
+  facingMode: "user",
 };
 
 const WebcamCapture = ({ setMoodState }) => {
-
   const [externalImgSrc, setExternal] = useState({
-    source: '',
+    source: "",
   });
 
   const webcamRef = React.useRef(null);
 
-  const capture = React.useCallback(
-    () => {
-      const imageSrc = webcamRef.current.getScreenshot();
-      const imgEl = document.getElementById('imageUpload')
-      setExternal({ source: imageSrc })
-      FaceAPI(imgEl).then(detections => setMoodState(detections))
-    },
-    [webcamRef]
-  );
+  const capture = React.useCallback(() => {
+    const imageSrc = webcamRef.current.getScreenshot();
+    const imgEl = document.getElementById("imageUpload");
+    setExternal({ source: imageSrc });
+    FaceAPI(imgEl).then((detections) => setMoodState(detections));
+  }, [webcamRef]);
 
   return (
     <>
@@ -40,11 +36,20 @@ const WebcamCapture = ({ setMoodState }) => {
         className="border"
       />
       <br />
-      <img className="border" src={externalImgSrc.source} width="720px" height="406px" id="imageUpload" alt="Face will render here"/>
+      <img
+        className="border"
+        src={externalImgSrc.source}
+        width="720px"
+        height="406px"
+        id="imageUpload"
+        alt="Face will render here"
+      />
       <br />
-      <Button className="moodButton" onClick={capture}>Capture photo</Button>
+      <Button className="moodButton" onClick={capture}>
+        Capture photo
+      </Button>
     </>
   );
 };
 
-export default WebcamCapture
+export default WebcamCapture;

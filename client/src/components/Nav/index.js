@@ -22,7 +22,7 @@ function Navigation() {
           <Nav.Link className="navbar-link" href="/login">
             Login
           </Nav.Link>
-          <Nav.Link className="navbar-link" href="/User">
+          <Nav.Link className="navbar-link" href="/user">
             My Profile
           </Nav.Link>
         </Nav>

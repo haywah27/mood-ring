@@ -8,7 +8,7 @@ function WebcamFinal() {
 
   let expression = "";
 
-  const [expressionState, setExpressionState] = useState('');
+  const [expressionState, setExpressionState] = useState("");
 
   console.log(moodState);
 
@@ -18,8 +18,6 @@ function WebcamFinal() {
         "An error has occured. To avoid such errors, please make sure your face is clearly visable and is in the center of the screen"
       );
     } else {
-      
-
       const angry = moodState[0].expressions.angry;
       const disgusted = moodState[0].expressions.disgusted;
       const fearful = moodState[0].expressions.fearful;
@@ -38,7 +36,7 @@ function WebcamFinal() {
       ) {
         console.log("Your mood is: Angry");
         expression = "Angry";
-        setExpressionState(expression)
+        setExpressionState(expression);
         console.log(expression);
       } else if (
         disgusted > angry &&
@@ -50,7 +48,7 @@ function WebcamFinal() {
       ) {
         console.log("Your mood is: Disgusted");
         expression = "Digusted";
-        setExpressionState(expression)
+        setExpressionState(expression);
         console.log(expression);
       } else if (
         fearful > angry &&
@@ -62,7 +60,7 @@ function WebcamFinal() {
       ) {
         console.log("Your mood is: Fearful");
         expression = "Fearful";
-        setExpressionState(expression)
+        setExpressionState(expression);
         console.log(expression);
       } else if (
         happy > angry &&
@@ -74,7 +72,7 @@ function WebcamFinal() {
       ) {
         console.log("Your mood is: Happy");
         expression = "Happy";
-        setExpressionState(expression)
+        setExpressionState(expression);
         console.log(expression);
       } else if (
         neutral > angry &&
@@ -86,7 +84,7 @@ function WebcamFinal() {
       ) {
         console.log("Your mood is: Neutral");
         expression = "Neutral";
-        setExpressionState(expression)
+        setExpressionState(expression);
         console.log(expression);
       } else if (
         sad > angry &&
@@ -98,7 +96,7 @@ function WebcamFinal() {
       ) {
         console.log("Your mood is: Sad");
         expression = "Sad";
-        setExpressionState(expression)
+        setExpressionState(expression);
         console.log(expression);
       } else if (
         surprised > angry &&
@@ -110,7 +108,7 @@ function WebcamFinal() {
       ) {
         console.log("Your mood is: Surprised");
         expression = "Surprised";
-        setExpressionState(expression)
+        setExpressionState(expression);
         console.log(expression);
       } else {
         alert("An error has occured");
@@ -119,16 +117,16 @@ function WebcamFinal() {
   }
 
   return (
+    <div className="WebcamFinal">
+      <WebcamCapture setMoodState={setMoodState} />
 
-      <div className="WebcamFinal">
-        <WebcamCapture setMoodState={setMoodState} />
-
-        <Button className="moodButton" onClick={click}>Check Mood</Button>
-
-        <div>Your Current Mood Is: {expressionState}</div>
-        
-      </div>
-
+      <Button className="moodButton" onClick={click}>
+        Check Mood
+      </Button>
+      <br />
+      <br />
+      <div className="subtitle">Your Current Mood Is: {expressionState}</div>
+    </div>
   );
 }
 

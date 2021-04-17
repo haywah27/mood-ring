@@ -56,8 +56,7 @@
   margin-bottom: 3vw;
   opacity: 30;
   font-style: italic;
-  color:lemonchiffon;
-  ;
+  color: lemonchiffon;
 }
 .User .Profile .Quote {
   margin-top: auto;
@@ -76,6 +75,6 @@
   font-style: italic;
   opacity: inherit;
   color: #f49d6e;
-  font-weight:bolder;
+  font-weight: bolder;
   margin-bottom: 10%;
 }
