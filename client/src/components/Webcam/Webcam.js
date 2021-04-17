@@ -2,10 +2,13 @@ import React, { useState } from "react";
 import WebcamCapture from "./WebcamCapture";
 import { Button } from "react-bootstrap";
 import "./Webcam.css";
-let expression = "";
 
 function WebcamFinal() {
   const [moodState, setMoodState] = useState([]);
+
+  let expression = "";
+
+  const [expressionState, setExpressionState] = useState('');
 
   console.log(moodState);
 
@@ -35,6 +38,7 @@ function WebcamFinal() {
       ) {
         console.log("Your mood is: Angry");
         expression = "Angry";
+        setExpressionState(expression)
         console.log(expression);
       } else if (
         disgusted > angry &&
@@ -46,6 +50,7 @@ function WebcamFinal() {
       ) {
         console.log("Your mood is: Disgusted");
         expression = "Digusted";
+        setExpressionState(expression)
         console.log(expression);
       } else if (
         fearful > angry &&
@@ -57,6 +62,7 @@ function WebcamFinal() {
       ) {
         console.log("Your mood is: Fearful");
         expression = "Fearful";
+        setExpressionState(expression)
         console.log(expression);
       } else if (
         happy > angry &&
@@ -68,6 +74,7 @@ function WebcamFinal() {
       ) {
         console.log("Your mood is: Happy");
         expression = "Happy";
+        setExpressionState(expression)
         console.log(expression);
       } else if (
         neutral > angry &&
@@ -79,6 +86,7 @@ function WebcamFinal() {
       ) {
         console.log("Your mood is: Neutral");
         expression = "Neutral";
+        setExpressionState(expression)
         console.log(expression);
       } else if (
         sad > angry &&
@@ -90,6 +98,7 @@ function WebcamFinal() {
       ) {
         console.log("Your mood is: Sad");
         expression = "Sad";
+        setExpressionState(expression)
         console.log(expression);
       } else if (
         surprised > angry &&
@@ -101,6 +110,7 @@ function WebcamFinal() {
       ) {
         console.log("Your mood is: Surprised");
         expression = "Surprised";
+        setExpressionState(expression)
         console.log(expression);
       } else {
         alert("An error has occured");
@@ -114,6 +124,8 @@ function WebcamFinal() {
         <WebcamCapture setMoodState={setMoodState} />
 
         <Button className="moodButton" onClick={click}>Check Mood</Button>
+
+        <div>Your Current Mood Is: {expressionState}</div>
         
       </div>
 
