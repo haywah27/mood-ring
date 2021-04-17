@@ -129,7 +129,7 @@ function WebcamFinal() {
         console.log("Your mood is: Surprised");
         expression = "Surprised";
         expressionMsg =
-          "Uh oh, did you see a ghost ? We have some jokes that might have a underlying element of surprise. Would you like to check them out? Click on the Moody Times button below.";
+          "Uh oh, did you see a ghost? We have some jokes that might have a underlying element of surprise. Would you like to check them out? Click on the Moody Times button below.";
         setExpressionState(expression);
         setExpressionMsgState(expressionMsg);
         console.log(expression);
