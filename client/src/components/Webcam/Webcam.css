@@ -19,3 +19,12 @@
 .moodButton:hover {
     background-color: #468499;
 }
+
+.expression {
+    font-weight: bold;
+    font-size:1.5rem;
+}
+.expressionMsg {   
+    font-size:1.5rem;
+    font-stretch: condensed;
+}
