@@ -11,18 +11,12 @@ const videoConstraints = {
   facingMode: "user",
 };
 
-const WebcamCapture = ({ setMoodState }) => {
+const WebcamCapture = ({ setMoodState, setIsLoaded, setIsLoading }) => {
   const [externalImgSrc, setExternal] = useState({
     source: "",
   });
 
-  const [isLoading, setIsLoading] = useState(false);
-  const loadingHandler = () => {
-    setIsLoading((current) => !current);
-  };
-  useEffect(() => {
-    console.log(isLoading);
-  }, [isLoading]);
+
 
   const webcamRef = React.useRef(null);
 
@@ -30,9 +24,12 @@ const WebcamCapture = ({ setMoodState }) => {
     const imageSrc = webcamRef.current.getScreenshot();
     const imgEl = document.getElementById("imageUpload");
     setExternal({ source: imageSrc });
+    setIsLoaded(false);
+    setIsLoading(true);
     FaceAPI(imgEl).then((detections) => {
       setMoodState(detections);
-      setIsLoading((current) => !current);
+      setIsLoaded(true);
+      setIsLoading(false);
     });
   }, [webcamRef]);
 
@@ -60,13 +57,11 @@ const WebcamCapture = ({ setMoodState }) => {
       <Button
         className="moodButton"
         onClick={() => {
-          loadingHandler();
           capture();
         }}
       >
         Capture photo
       </Button>
-      {isLoading ? <LoadingSpinner /> : null}
     </>
   );
 };

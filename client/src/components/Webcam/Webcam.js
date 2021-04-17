@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import WebcamCapture from "./WebcamCapture";
 import { Button } from "react-bootstrap";
+import LoadingSpinner from "../Spinner/LoadingSpinner";
 import "./Webcam.css";
 
 function WebcamFinal() {
@@ -9,6 +10,9 @@ function WebcamFinal() {
   let expression = "";
 
   const [expressionState, setExpressionState] = useState("");
+
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   console.log(moodState);
 
@@ -118,14 +122,18 @@ function WebcamFinal() {
 
   return (
     <div className="WebcamFinal">
-      <WebcamCapture setMoodState={setMoodState} />
+      <WebcamCapture setIsLoaded= {setIsLoaded} setIsLoading= {setIsLoading} setMoodState={setMoodState} />
 
-      <Button className="moodButton" onClick={click}>
-        Check Mood
-      </Button>
-      <br />
-      <br />
-      <div className="subtitle">Your Current Mood Is: {expressionState}</div>
+      {isLoaded && (
+        <>
+        <Button className="moodButton" onClick={click}>
+          Check Mood
+        </Button>
+         <div className="subtitle">Your Current Mood Is: {expressionState}</div>
+         </>
+      )}
+    {isLoading && <LoadingSpinner/>}
+     
     </div>
   );
 }
