@@ -8,18 +8,18 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/MOOD-RING");
 const moodSeed = [
   {
     title: "seed1",
+    id: "ID number 1",
+    expression: "",
+   
+  },
+  {
+    title: "ID number 2",
     id: "",
     expression: "",
    
   },
   {
-    title: "seed2",
-    id: "",
-    expression: "",
-   
-  },
-  {
-    title: "seed3",
+    title: "ID number 3",
     id: "",
     expression: "",
    
@@ -28,7 +28,8 @@ const moodSeed = [
   
 ];
 
-db.Mood.remove({})
+db.Mood
+.remove({})
   .then(() => db.Mood.collection.insertMany(moodSeed))
   .then(data => {
     console.log(data.result.n + " records inserted!");
