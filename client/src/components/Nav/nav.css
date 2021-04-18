@@ -3,7 +3,7 @@
   justify-content: center;
   align-items: center;
   border-radius: 4px;
-  background-color: #301934;
+  background-color:  #133337;
   
 }
 .navbar-header {
@@ -29,12 +29,12 @@
 
 .navbar-link:hover{
   transform: translateY(-2px);
-  color: #468499 !important;
+  color: #f08080 !important;
 }
 
 .navbar-header:hover{
   transform: translateY(-2px);
-  color: #468499 !important;
+  color: #f08080 !important;
 }
 
 /* nice blue color */
