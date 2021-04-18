@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const moodSchema = new Schema({
-  id: { required: id.name, type: String, unique: true },
+  id: {  type: String, required: true },
   expression: { type: String, required: "Sorry.Can't save an empty mood." },
 });
 
