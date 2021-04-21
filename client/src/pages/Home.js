@@ -20,7 +20,7 @@ function Home() {
             <Button href="/login" className="getStartedButton" size="huge">
               Login
             </Button>
-            <span className="subtitle"> OR </span>
+            <div className="subtitle"> OR </div>
             <Button href="/new-mood" className="getStartedButton" size="huge">
               Check Mood
             </Button>
