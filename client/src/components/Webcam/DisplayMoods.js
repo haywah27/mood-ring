@@ -41,7 +41,9 @@ function DisplayMoods(props) {
         console.log("Your mood is: Angry");
         setExpressionState("Angry");
         props.setMood("Angry");
-        setExpressionMsgState("Would you like to check out some cat memes to calm you down a bit?");
+        setExpressionMsgState(
+          "Would you like to check out some cat memes to calm you down a bit?"
+        );
       } else if (
         disgusted > angry &&
         disgusted > fearful &&
@@ -53,7 +55,9 @@ function DisplayMoods(props) {
         console.log("Your mood is: Disgusted");
         setExpressionState("Disgusted");
         props.setMood("Disgusted");
-        setExpressionMsgState("Would you like to check out some videos to  make that gross feeling go away?");
+        setExpressionMsgState(
+          "Would you like to check out some videos to  make that gross feeling go away?"
+        );
       } else if (
         fearful > angry &&
         fearful > disgusted &&
@@ -65,7 +69,9 @@ function DisplayMoods(props) {
         console.log("Your mood is: Fearful");
         setExpressionState("Fearful");
         props.setMood("Fearful");
-        setExpressionMsgState("Would you like to check out some videos that will help you tackle that fear?");
+        setExpressionMsgState(
+          "Would you like to check out some videos that will help you tackle that fear?"
+        );
       } else if (
         happy > angry &&
         happy > disgusted &&
@@ -77,7 +83,9 @@ function DisplayMoods(props) {
         console.log("Your mood is: Happy");
         setExpressionState("Happy");
         props.setMood("Happy");
-        setExpressionMsgState("Alright!! How about some jokes to keep that GREAT mood going?");
+        setExpressionMsgState(
+          "Alright!! How about some jokes to keep that GREAT mood going?"
+        );
       } else if (
         neutral > angry &&
         neutral > disgusted &&
@@ -89,7 +97,9 @@ function DisplayMoods(props) {
         console.log("Your mood is: Neutral");
         setExpressionState("Neutral");
         props.setMood("Neutral");
-        setExpressionMsgState("We have just the right thing to give that mood a jump start, would you like to check out some Dad jokes?");
+        setExpressionMsgState(
+          "We have just the right thing to give that mood a jump start, would you like to check out some Dad jokes?"
+        );
       } else if (
         sad > angry &&
         sad > disgusted &&
@@ -101,7 +111,9 @@ function DisplayMoods(props) {
         console.log("Your mood is: Sad");
         setExpressionState("Sad");
         props.setMood("Sad");
-        setExpressionMsgState("Don't worry, be HAPPY!.We can turn that frown, upside down! Would you like to check out some memes or videos to help crack a smile?");
+        setExpressionMsgState(
+          "Don't worry, be HAPPY!.We can turn that frown, upside down! Would you like to check out some memes or videos to help crack a smile?"
+        );
       } else if (
         surprised > angry &&
         surprised > disgusted &&
@@ -112,29 +124,36 @@ function DisplayMoods(props) {
       ) {
         console.log("Your mood is: Surprised");
         setExpressionState("Surprised");
-        setExpressionMsgState("Uh oh, did you see a ghost? We have some jokes that might have a underlying element of surprise. Would you like to check them out?");
+        setExpressionMsgState(
+          "Uh oh, did you see a ghost? We have some jokes that might have a underlying element of surprise. Would you like to check them out?"
+        );
       } else {
         alert("An error has occurred");
       }
-        props.setIsMoodSet(true);
+      props.setIsMoodSet(true);
     }
   }
 
   return (
     <div className="WebcamFinal">
-      <Webcam setIsLoaded= {setIsLoaded} setIsLoading= {setIsLoading} setMoodState={setMoodState} />
+      <Webcam
+        setIsLoaded={setIsLoaded}
+        setIsLoading={setIsLoading}
+        setMoodState={setMoodState}
+      />
 
       {isLoaded && (
         <>
-        <Button className="moodButton" onClick={click}>
-          Check Mood
-        </Button>
-         <div className="expression">Your Current Mood Is: {expressionState}</div>
-         <div className="expressionMsg">{expressionMsgState}</div>
-         </>
+          <Button className="moodButton" onClick={click}>
+            Check Mood
+          </Button>
+          <div className="expression">
+            Your Current Mood Is: {expressionState}
+          </div>
+          <div className="expressionMsg">{expressionMsgState}</div>
+        </>
       )}
-    {isLoading && <LoadingSpinner/>}
-     
+      {isLoading && <LoadingSpinner />}
     </div>
   );
 }
