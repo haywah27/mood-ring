@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import Webcam from "./Webcam";
 import { Button } from "react-bootstrap";
 import LoadingSpinner from "../Spinner/LoadingSpinner";
+import API from '../../utils/API';
 import "./Webcam.css";
 
 function DisplayMoods(props) {
-  console.log(props);
+
   const [moodState, setMoodState] = useState([]);
 
   const [expressionState, setExpressionState] = useState("");
@@ -13,8 +14,6 @@ function DisplayMoods(props) {
 
   const [isLoaded, setIsLoaded] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-
-  console.log(moodState);
 
   function click() {
     if (moodState.length === 0) {
@@ -120,6 +119,14 @@ function DisplayMoods(props) {
     }
   }
 
+  function saveMood() {
+    const newMood = {
+      expressions: expressionState
+    }
+    console.log(newMood);
+    API.save(newMood);
+  }
+
   return (
     <div className="WebcamFinal">
       <Webcam setIsLoaded= {setIsLoaded} setIsLoading= {setIsLoading} setMoodState={setMoodState} />
@@ -131,6 +138,8 @@ function DisplayMoods(props) {
         </Button>
          <div className="expression">Your Current Mood Is: {expressionState}</div>
          <div className="expressionMsg">{expressionMsgState}</div>
+         <br></br>
+         <Button className="saveMood" onClick={saveMood}>Save Mood</Button>
          </>
       )}
     {isLoading && <LoadingSpinner/>}
