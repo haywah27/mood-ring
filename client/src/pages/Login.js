@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import API from '../utils/API'
 
 import { GoogleLogin } from "react-google-login";
 // refresh token
@@ -10,14 +11,11 @@ const clientId =
 
 
 function Login() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const onSuccess = (res) => {
     setIsLoggedIn(true);
     console.log("Login Success: currentUser:", res.profileObj);
-    // alert(
-    //   `Logged in successfully welcome ${res.profileObj.name} 😍. \n See console for full profile object.`
-    // );
+    API.findUser(res.profileObj.name)
     refreshTokenSetup(res);
   };
 
