@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import Webcam from "./Webcam";
 import { Button } from "react-bootstrap";
 import LoadingSpinner from "../Spinner/LoadingSpinner";
+import API from '../../utils/API';
 import "./Webcam.css";
 
-function DisplayMoods() {
+function DisplayMoods(props) {
+
   const [moodState, setMoodState] = useState([]);
 
   const [expressionState, setExpressionState] = useState("");
@@ -12,8 +14,6 @@ function DisplayMoods() {
 
   const [isLoaded, setIsLoaded] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-
-  console.log(moodState);
 
   function click() {
     if (moodState.length === 0) {
@@ -39,6 +39,7 @@ function DisplayMoods() {
       ) {
         console.log("Your mood is: Angry");
         setExpressionState("Angry");
+        props.setMood("Angry");
         setExpressionMsgState("Would you like to check out some cat memes to calm you down a bit?");
       } else if (
         disgusted > angry &&
@@ -50,6 +51,7 @@ function DisplayMoods() {
       ) {
         console.log("Your mood is: Disgusted");
         setExpressionState("Disgusted");
+        props.setMood("Disgusted");
         setExpressionMsgState("Would you like to check out some videos to  make that gross feeling go away?");
       } else if (
         fearful > angry &&
@@ -61,6 +63,7 @@ function DisplayMoods() {
       ) {
         console.log("Your mood is: Fearful");
         setExpressionState("Fearful");
+        props.setMood("Fearful");
         setExpressionMsgState("Would you like to check out some videos that will help you tackle that fear?");
       } else if (
         happy > angry &&
@@ -72,7 +75,8 @@ function DisplayMoods() {
       ) {
         console.log("Your mood is: Happy");
         setExpressionState("Happy");
-        setExpressionMsgState("Alright!! How about some funny cat videos to keep that GREAT mood going?");
+        props.setMood("Happy");
+        setExpressionMsgState("Alright!! How about some jokes to keep that GREAT mood going?");
       } else if (
         neutral > angry &&
         neutral > disgusted &&
@@ -83,7 +87,8 @@ function DisplayMoods() {
       ) {
         console.log("Your mood is: Neutral");
         setExpressionState("Neutral");
-        setExpressionMsgState("We have just the right thing to give that mood a jump start, would you like to check it out?");
+        props.setMood("Neutral");
+        setExpressionMsgState("We have just the right thing to give that mood a jump start, would you like to check out some Dad jokes?");
       } else if (
         sad > angry &&
         sad > disgusted &&
@@ -94,6 +99,7 @@ function DisplayMoods() {
       ) {
         console.log("Your mood is: Sad");
         setExpressionState("Sad");
+        props.setMood("Sad");
         setExpressionMsgState("Don't worry, be HAPPY!.We can turn that frown, upside down! Would you like to check out some memes or videos to help crack a smile?");
       } else if (
         surprised > angry &&
@@ -109,7 +115,16 @@ function DisplayMoods() {
       } else {
         alert("An error has occurred");
       }
+        props.setIsMoodSet(true);
     }
+  }
+
+  function saveMood() {
+    const newMood = {
+      expressions: expressionState
+    }
+    console.log(newMood);
+    API.save(newMood);
   }
 
   return (
@@ -123,6 +138,8 @@ function DisplayMoods() {
         </Button>
          <div className="expression">Your Current Mood Is: {expressionState}</div>
          <div className="expressionMsg">{expressionMsgState}</div>
+         <br></br>
+         <Button className="saveMood" onClick={saveMood}>Save Mood</Button>
          </>
       )}
     {isLoading && <LoadingSpinner/>}

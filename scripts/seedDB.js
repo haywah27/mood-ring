@@ -1,36 +1,24 @@
 const mongoose = require("mongoose");
 const db = require("../models");
 
-// This file empties the Posts collection and inserts the books below
+mongoose.connect(
+  process.env.MONGODB_URI || "mongodb://localhost/moods"
+);
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/MOOD");
-
-const moodSeed = [
+const userSeed = [
   {
-    title: "seed1",
-    id: "ID number 1",
-    expression: "",
-   
+    user: "Hayley"
   },
   {
-    title: "ID number 2",
-    id: "",
-    expression: "",
-   
+    user: "Billie"
   },
   {
-    title: "ID number 3",
-    id: "",
-    expression: "",
-   
+    user: "Chloe"
   },
-  
-  
 ];
 
-db.Mood
-.remove({})
-  .then(() => db.Mood.collection.insertMany(moodSeed))
+db.Mood.remove({})
+  .then(() => db.Mood.collection.insertMany(userSeed))
   .then(data => {
     console.log(data.result.n + " records inserted!");
     process.exit(0);

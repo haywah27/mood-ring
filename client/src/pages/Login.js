@@ -1,4 +1,5 @@
 import React from "react";
+import API from '../utils/API'
 
 import { GoogleLogin } from "react-google-login";
 // refresh token
@@ -8,11 +9,10 @@ const clientId =
   "135452617126-oo0lohdfakjgm8sdjtbdk02doojua4t2.apps.googleusercontent.com";
 
 function Login() {
+
   const onSuccess = (res) => {
     console.log("Login Success: currentUser:", res.profileObj);
-    alert(
-      `Logged in successfully welcome ${res.profileObj.name} 😍. \n See console for full profile object.`
-    );
+    API.findUser(res.profileObj.name)
     refreshTokenSetup(res);
   };
 
