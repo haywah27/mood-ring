@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Navigation from "./components/Nav/index";
+import LogoutNav from "./components/Nav/logoutNav";
 import Home from "./pages/Home";
 import CaptureMood from "./pages/CaptureMood";
 import NewMood from "./pages/NewMood";
@@ -16,7 +17,9 @@ function App() {
   return (
     <div>
       <Router>
-        <Navigation />
+      {!isLoggedIn && (<Navigation />)}
+      {isLoggedIn && (<LogoutNav />)}
+        
         <Switch>
           <Route path="/" exact component={() => <Home />} />
           <Route path="/moods" exact component={() => <CaptureMood />} />
