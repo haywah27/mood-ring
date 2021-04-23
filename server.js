@@ -39,9 +39,15 @@ app.get("*", (req, res) => {
 });
 
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/mood-ring");
+mongoose.connect(process.env.MONGODB_URI || "mongodb+srv://aimee_admin:AimeePW@reactmoodring.gzg5j.mongodb.net/Mood-ring", {useNewUrlParser: true}, {useUnifiedTechnology: true}) ;
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/moods");
+// mongoose.connect(process.env.MONGODB_URI || "mongodb+srv://aimee_admin:moodRingApp@reactmoodring.gzg5j.mongodb.net/moods", {useNewUrlParser: true}, {useUnifiedTechnology: true}) ;
+
+// mongoose.connect(process.env.MONGODB_URI || "mongodb+srv://aimee_admin:moodRingApp@reactmoodring.gzg5j.mongodb.net/moods", {useNewUrlParser: true}, {useUnifiedTechnology: true}) ;
+
+
+
+// mongodb+srv://aimee_admin:<password>@reactmoodring.gzg5j.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
 
 
 app.listen(PORT, () => {
