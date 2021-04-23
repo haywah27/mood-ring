@@ -32,16 +32,39 @@ Router.post('/api/mood', async (req, res) => {
   const name = req.body.name;
   const expressions = req.body.expressions;
   console.log(req.body)
+    db.Mood
+      .findOneAndUpdate({ googleId: googleId }, {$push: {expressions: expressions}})
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  // db.Mood.create({
+  //   name,
+  //   googleId,
+  //   expressions
+  // })
+  // .then(mood => res.json(mood))
+  // .catch(err => {
+  //   console.log(err);
+  //   res.status(422).end()
+  // });
+})
+
+Router.post('/api/user', async (req, res) => {
+  // Grab info
+  const googleId = req.body.googleId;
+  const name = req.body.name;
+  const expressions = req.body.expressions;
+  console.log(req.body)
   db.Mood.create({
     name,
     googleId,
     expressions
   })
-  .then(mood => res.json(mood))
+  .then(user => res.json(user))
   .catch(err => {
     console.log(err);
     res.status(422).end()
   });
 })
+
 
 module.exports = Router;

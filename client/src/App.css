@@ -19,7 +19,10 @@
 }
 
 body { 
-  background: #301934;
+  /* background: #301934; */
+  background-image: url("./mood\ image.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 @keyframes App-logo-spin {

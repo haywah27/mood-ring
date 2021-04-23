@@ -4,7 +4,7 @@ export default {
     
     createMood: function(data) {
         return axios.post("/api/mood", {
-            name: data.name,
+            // name: data.name,
             googleId: data.googleId,
             expressions: data.expressions
         })
