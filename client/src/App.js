@@ -17,9 +17,9 @@ function App() {
   return (
     <div>
       <Router>
-      {!isLoggedIn && (<Navigation />)}
-      {isLoggedIn && (<LogoutNav />)}
-        
+      {/* {!isLoggedIn && (<Navigation />)}
+      {isLoggedIn && (<LogoutNav />)} */}
+        <Navigation />
         <Switch>
           <Route path="/" exact component={() => <Home />} />
           <Route path="/moods" exact component={() => <CaptureMood />} />
