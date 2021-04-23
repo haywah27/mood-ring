@@ -1,7 +1,21 @@
-import React from 'react';
+import React, { useState, Component } from 'react';
 import './User.css';
-import { Jumbotron, Container, Button } from 'react-bootstrap';
-import axios from "axios";
+import {
+  Jumbotron,
+  Container,
+  Card,
+  ListGroup,
+  Row,
+  Col,
+} from 'react-bootstrap';
+import axios from 'axios';
+import Login from '../pages/Login';
+// import DisplayMoods from "../DisplayMoods";
+
+// import { GoogleLogin } from "react-google-login";
+// refresh token
+// import { refreshTokenSetup } from "../utils/freshToken";
+// const [nameState, setNameState] = useState([]);
 
 class User extends React.Component {
   constructor(props) {
@@ -17,7 +31,7 @@ class User extends React.Component {
     document.getElementsByClassName('login').className = '';
     document.getElementsByClassName('home').className = '';
     document.getElementsByClassName('user').className = 'active';
-    this.getProfile();
+    // this.getProfile();
   }
 
   getProfile() {
@@ -38,26 +52,109 @@ class User extends React.Component {
       <div>
         <Container>
           <Jumbotron className='userDisplay' fluid>
-            <Container>
-              <div className='col-md-5'>
+
+            <Container fluid='md'>
+              <Row className='justify-content-md-center'>
+                <Col md='auto'>
+                  <Jumbotron fluid>
+                    <h1 className='header text-center'>
+                      Welcome To Your Mood Ring Profile
+                    </h1>
+                    <Card>
+                      <Card.Body>
+                        <Card.Text>
+                          <h3 className='userNameDisplay text-center'>
+                            My User Name
+                          </h3>
+
+                          <label
+                            value={this.state.name}
+                            type='text'
+                            // placeholder='name'
+                            // required
+                          />
+
+                          <h3 className='userNameDisplay text-center'>
+                            My Current Mood
+                          </h3>
+
+                          <label
+                            value={this.state.expression}
+                            type='text'
+                            placeholder='expression'
+                            required
+                          />
+                        </Card.Text>
+                        {/* <Card.Img variant='top' src='holder.js/100px180' /> */}
+                      </Card.Body>
+                    </Card>
+                  </Jumbotron>
+                </Col>
+              </Row>
+            </Container>
+
+            <Container fluid='md'>
+              <Row className='justify-content-md-center'>
+                <Col md='auto'>
+                  <Jumbotron fluid>
+                  <h1>Mood History</h1>
+                      <h4> Here's a quick look at your last 5 expressions</h4>
+                    <ListGroup variant='flush' className='expressionHistory'>                     
+                      <ListGroup.Item>Expression :</ListGroup.Item>
+                      <ListGroup.Item>Expression</ListGroup.Item>
+                      <ListGroup.Item>Expression</ListGroup.Item>
+                      <ListGroup.Item>Expression</ListGroup.Item>
+                      <ListGroup.Item>Expression</ListGroup.Item>
+                    </ListGroup>   
+                    <Card>
+                      
+                        <Card.Body>
+                          <Card.Link href='#'>Link to something </Card.Link>
+                          <Card.Link href='#'>Another Link</Card.Link>
+                        </Card.Body>
+                        </Card> 
+                        <div className='justify-content-md-center'>
+                        <Login />
+                      </div>
+                                  
+                  </Jumbotron>
+                </Col>
+              </Row>
+            </Container>
+
+            {/* <Card.Body>
+                <Card.Link href='#'>Link to something </Card.Link>
+                <Card.Link href='#'>Another Link</Card.Link>
+              </Card.Body>
+
+              <div>
+                <Login />
+              </div> */}
+
+            {/* <div className='col-md-5'>
                 <h1 className='userTitle'> My Profile </h1>
 
-                <div className='userBody'>
-                  <input
+                <div className='userBody'> */}
+            {/* <input
                     value={this.state.name}
                     type='text'
                     placeholder='Name'
                     required
-                  />
-                  <input
+                  /> */}
+            {/* <input
                     value={this.state.expression}
-                    type='expression'
+                    type='text'
                     placeholder='expression'
                     required
                   />
-                </div>
+                </div> */}
+            {/* <div>
+      <Login
+      
+      />
+    </div> */}
 
-                {/* <button
+            {/* <button
                   type='button'
                   onClick={this.updateProfile}
                   id='submit'
@@ -66,8 +163,7 @@ class User extends React.Component {
                 >
                   Update
                 </button> */}
-              </div>
-            </Container>
+            {/* </div> */}
           </Jumbotron>
         </Container>
       </div>
