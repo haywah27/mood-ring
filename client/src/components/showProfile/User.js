@@ -24,7 +24,7 @@ class ShowProfile extends React.Component {
     })
     .then(function (response) {
         self.setState({name:response.data.name});
-        self.setState({expression:response.data.expressionl});
+        self.setState({expression:response.data.expression});
         
          
     })
