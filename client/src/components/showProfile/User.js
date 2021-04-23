@@ -1,6 +1,3 @@
-
-
-
 class ShowProfile extends React.Component {
   constructor(props) {
     super(props);
@@ -20,20 +17,16 @@ class ShowProfile extends React.Component {
 
   getProfile() {
     var self = this;
-    axios.post('/getProfile', {
-    })
-    .then(function (response) {
-        self.setState({name:response.data.name});
-        self.setState({expression:response.data.expression});
-        
-         
-    })
-    .catch(function (error) {
-        console.log('error is ',error);
-    });
+    axios
+      .post('/getProfile', {})
+      .then(function (response) {
+        self.setState({ name: response.data.name });
+        self.setState({ expression: response.data.expression });
+      })
+      .catch(function (error) {
+        console.log('error is ', error);
+      });
   }
-
-  
 
   render() {
     return (
@@ -88,18 +81,14 @@ class ShowProfile extends React.Component {
   }
 }
 
-function getUserInfo(username, callback){
-    MongoClient.connect(url, function(err, db){
-         
-        db.collection('user').findOne( { email : username 
-        },function(err, result){
-            if(result==null){
-                callback(false)
-            }
-            else{
-                callback(result);
-            }
-        });
-         
+function getUserInfo(username, callback) {
+  MongoClient.connect(url, function (err, db) {
+    db.collection('user').findOne({ email: username }, function (err, result) {
+      if (result == null) {
+        callback(false);
+      } else {
+        callback(result);
+      }
     });
-};
+  });
+}
