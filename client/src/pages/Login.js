@@ -1,9 +1,7 @@
 import React, { useState } from "react";
-import API from '../utils/API';
+import API from "../utils/API";
 import Navigation from "../components/Nav/index";
 import LogoutNav from "../components/Nav/logoutNav";
-
-
 
 import { GoogleLogin } from "react-google-login";
 // refresh token
@@ -13,13 +11,15 @@ import GoogleLogout from "./Logout";
 const clientId =
   "135452617126-oo0lohdfakjgm8sdjtbdk02doojua4t2.apps.googleusercontent.com";
 
-
 function Login() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const onSuccess = (res) => {
     setIsLoggedIn(true);
     console.log("Login Success: currentUser:", res.profileObj);
-    API.findUser({googleId: res.profileObj.googleId, name: res.profileObj.name})
+    API.findUser({
+      googleId: res.profileObj.googleId,
+      name: res.profileObj.name,
+    });
     refreshTokenSetup(res);
   };
 
@@ -30,9 +30,9 @@ function Login() {
 
   return (
     <div>
-      {!isLoggedIn && (<Navigation isLoggedIn={isLoggedIn}/>)}
-      {isLoggedIn && (<LogoutNav />)}
-      
+      {/* {!isLoggedIn && (<Navigation isLoggedIn={isLoggedIn}/>)}
+      {isLoggedIn && (<LogoutNav />)} */}
+      <Navigation isLoggedIn={isLoggedIn} />
       {!isLoggedIn && (
         <GoogleLogin
           clientId={clientId}
