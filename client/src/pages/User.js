@@ -1,9 +1,7 @@
-// import React, { Component } from "react";
 import React from "react";
-// import logo from "./logo.svg";
 import "./User.css";
 
-// class User extends Component{
+
 export class User extends React.Component {
   constructor(props) {
     super(props);
