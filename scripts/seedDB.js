@@ -15,9 +15,6 @@ const userSeed = [
   {
     user: "Chloe"
   },
-  {
-    user: "Aimee"
-  },
 ];
 
 db.Mood.remove({})
