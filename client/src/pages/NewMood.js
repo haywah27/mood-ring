@@ -4,20 +4,33 @@ import { Jumbotron, Container, Button } from "react-bootstrap";
 import Webcam from "../components/Webcam/DisplayMoods";
 import axios from "axios";
 
+
 function Home() {
 
 const [isMoodSet, setIsMoodSet] = useState(false);
 const [jokes, setJokes] = useState([]);
 const [mood, setMood] = useState(false);
 const [quote, setQuote] = useState(false);
+const [gif, setGif] = useState(false);
+const [meme, setMeme] = useState(false);
 
 useEffect(() => {
   if(isMoodSet){
-    if(mood==="Happy") 
+    if(mood==="Happy" || mood==="Disgusted") 
     {
     getQuotes()
     }
-    getJokes()
+  else if(mood==="Surprised" || mood==="Angry") {
+    getGifs()
+  }
+    else if(mood==="Fearful" || mood==="Sad") {
+      getJokes()
+  } else if(mood==="Neutral") {
+    getMemes()
+}
+  else{
+    console.log(mood)
+  }
   }
 }, [isMoodSet])
 
@@ -53,6 +66,52 @@ const getQuotes = async () => {
   })
 }
 
+const getGifs = async () => {
+  axios.get(`https://giphy.p.rapidapi.com/v1/gifs/random`, {
+    params: {api_key: 'Sf6Lj6rQFasqHsLZgdmAc7jgaE4eQGUG', tag: 'puppy'},  
+  headers: {
+    'x-rapidapi-key': 'd62e6f34f0msha0a4e23e56f8267p1e1473jsnb6ca869e4a1e',
+    'x-rapidapi-host': 'giphy.p.rapidapi.com'
+    }
+  })    
+  .then((res) => {
+    console.log(res.data)
+    setGif(res.data)
+  })
+  .catch((error) => {
+    console.error(error)
+  })
+}
+
+const getMemes = async () => {
+  axios.get(`https://ronreiter-meme-generator.p.rapidapi.com/meme`, {
+    params: {
+      meme: 'Condescending-Wonka',
+      bottom: 'Yeah, that will work',
+      top: 'Meme to help your mood?',
+      font_size: '50',
+      font: 'Impact'
+    },
+    headers: {
+      'x-rapidapi-key': 'd62e6f34f0msha0a4e23e56f8267p1e1473jsnb6ca869e4a1e',
+      'x-rapidapi-host': 'ronreiter-meme-generator.p.rapidapi.com'
+    },
+    responseType: "arraybuffer"
+  })
+  .then((res) => {
+    console.log(res);
+ 
+ const file = new Blob([res.data], {type:'image/jpeg'})
+ console.log(file) 
+ let image = URL.createObjectURL(file);
+ console.log(image)
+ setMeme(image)
+
+  })
+  .catch((error) => {
+    console.error(error.message)
+  })
+}
 
 console.log("isMoodSet:", isMoodSet);
   
@@ -75,7 +134,7 @@ return (
         </Jumbotron>
         <Jumbotron className="dimension text-center" fluid>
           <Container>
-            <div className="subtitle">Here's some relevant content:</div>
+            <div className="subtitle">Mood Ring Suggests:</div>
             {mood=="Neutral" || mood=="Sad"? jokes.map(joke => {
               return(
                 <div key={joke._id} className="jokeContainer">
@@ -85,9 +144,22 @@ return (
               )
             }):""}
             {quote? <div className="quoteContainer">
-             <h4>Inspirational Quote</h4> 
+             <h4>An Inspirational Quote</h4> 
               <h5>{quote.text}</h5>
              <p>{quote.author}</p>
+             </div>: ""
+            }
+               {gif? <div className="gifContainer">
+             <h4>Enjoy a random Gif on us</h4>
+             <img
+             src={gif.data.image_original_url}
+             />
+             </div>: ""
+            }
+               {meme? <div className="memeContainer">
+             <img
+             src={meme}
+             />
              </div>: ""
             }
           </Container>
@@ -98,3 +170,4 @@ return (
 }
 
 export default Home;
+

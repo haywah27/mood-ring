@@ -1,13 +1,30 @@
 import axios from "axios";
 
 export default {
-    updateMood: function(data) {
+    
+    createMood: function(data) {
         return axios.post("/api/mood", {
+            name: data.name,
+            googleId: data.googleId,
             expressions: data.expressions
         })
         .then(function (response) {
         console.log(response);
-        alert('Mood Has Been Saved')
+        alert('Mood Has Been Saved!')
+        })
+        .catch(function (error) {
+        console.log(error);
+        })
+    },
+
+
+    updateMood: function(data) {
+        return axios.put("/api/mood", {
+            expressions: data.expressions
+        })
+        .then(function (response) {
+        console.log(response);
+        alert('Mood Has Been Updated!')
         })
         .catch(function (error) {
         console.log(error);
@@ -15,16 +32,18 @@ export default {
     },
 
     findUser: function(data) {
-        return axios.get(`/api/user/${data}`)
+        return axios.get(`/api/user/${data.googleId}`)
         .then(function (response) {
         console.log(response);
-        if(response.data != null) {
-            alert(`${response.data.user} is now logged in`)
+        if(response.data.length) {
+            alert(`${data.name} is now logged in`)
             localStorage.setItem('Profile', JSON.stringify(response.data));
         } else {
             return axios.post('/api/user', {
-                user: data,
-                expressions: 'No Moods Yet'
+                googleId: data.googleId,
+                name: data.name,
+                expressions: [],
+
             })
             .then(function (response) {
             console.log(response);

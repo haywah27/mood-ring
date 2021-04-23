@@ -19,7 +19,7 @@ function Login() {
   const onSuccess = (res) => {
     setIsLoggedIn(true);
     console.log("Login Success: currentUser:", res.profileObj);
-    API.findUser(res.profileObj.name)
+    API.findUser({googleId: res.profileObj.googleId, name: res.profileObj.name})
     refreshTokenSetup(res);
   };
 
