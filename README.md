@@ -1,15 +1,13 @@
-## Mood Ring App
- Project description 
+# Mood Ring App
+Explore our facial recognition technology to capture your current emotion and the Mood Ring App will provide content that serves as a type of "remedy" or "boost" to your current emotion. Users who login are able to see a history of previous moods as a clean, accessible graph.
+
+## Deployment (Heroku) - Live Link
+### [Mood Ring](moody-ring.herokuapp.com/)
 
 ## Table of contents
-- [Mood Ring App](#mood-ring-app)
-- [Table of contents](#table-of-contents)
 - [General Info](#general-info)
 - [Technologies](#technologies)
-- [## Deployment (Heroku) - Live Link](#-deployment-heroku---live-link)
-- [Github Repo](#github-repo)
-- [Code Snippets](#code-snippets)
-- [Sources](#sources)
+- [Deployed Website](#deployed-website)
 - [Authors](#authors)
 
 ## General Info
@@ -34,6 +32,7 @@ This application implements the following:
 * Protects API keys in Node with environment variables
 
 ## Technologies
+* React
 * Javascript
 * HTML/CSS
 * React
@@ -42,38 +41,26 @@ This application implements the following:
 * Express
 * If-env
 * MongoDB
+* Heroku
 * React-boostrap
 * React-google-login
 * React-router-dom
 
-## ## Deployment (Heroku) - Live Link
-- [Heroku](LINK HERE)
+## Deployed Website
+<!-- <img src="" alt="deployed-site"> -->
 
-## Github Repo
-- [Github Repo](https://github.com/haywah27/mood-ring.git)
-
-## Code Snippets
-
-
-
-## Sources
-Application enabled using the following sources:
-
-* [NPM Express](https://www.npmjs.com/package/express)
-* [NPM Passport](https://www.npmjs.com/package/passport)
-<!-- * [NPM Bcrypt](https://www.npmjs.com/package/bcryptjs)   -->
 
 ## Authors
 Created by Michael, Kyle, Hayley, Yvette and Amiee - feel free to contact us to collaborate on this project or any other project!
-<!-- 
-* [Michael Alexander LinkedIn](https://www.linkedin.com/in/michael-m-alexander/)
-* [Kyle Gates LinkedIn](https://www.linkedin.com/in/kyle-gates-62a131184/)
-* [Hayley Wahlroos LinkedIn](https://www.linkedin.com/in/wahlroos/)
-* [Yvette Henderson LinkedIn](https://www.linkedin.com/in/yvette-henderson/)
-* [Aimee Mattson LinkedIn](https://www.linkedin.com/in/aimee-mattson-bb060398/)
 
-* [Michael Alexander](https://github.com/ALEX00100alex)
+* Michael Alexander: [LinkedIn](https://www.linkedin.com/in/michael-m-alexander/) / [GitHub](https://github.com/ALEX00100alex)
+* Kyle Gates: [LinkedIn](https://www.linkedin.com/in/kyle-gates-62a131184/) / [GitHub](https://github.com/gateskyle)
+* Hayley Wahlroos: [LinkedIn](https://www.linkedin.com/in/wahlroos/) / [GitHub](https://github.com/haywah27)
+* Yvette Henderson: [LinkedIn](https://www.linkedin.com/in/yvette-henderson/) / [GitHub](https://github.com/yvettehenderson)
+* Aimee Mattson: [LinkedIn](https://www.linkedin.com/in/aimee-mattson-bb060398/) / [GitHub](https://github.com/jinxdoll)
+
+<!-- * [Michael Alexander](https://github.com/ALEX00100alex)
 * [Kyle Gates](https://github.com/gateskyle)
 * [Hayley Wahlroos](https://github.com/haywah27)
 * [Yvette Henderson](https://github.com/yvettehenderson)
-* [Aimee Mattson ](https://github.com/jinxdoll)
+* [Aimee Mattson ](https://github.com/jinxdoll) -->
