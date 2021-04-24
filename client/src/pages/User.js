@@ -10,7 +10,6 @@ function User () {
   const localUser = JSON.parse(localStorage.getItem("Profile"))
   // console.log("localUser:", localUser[0].googleId)
 
-  
 
   function getMoods() {
     let expressions;
