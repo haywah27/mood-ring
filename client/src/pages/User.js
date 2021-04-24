@@ -30,6 +30,9 @@ function User() {
         Moods
         {getMoods.expressions}
       </div> */}
+      <div>
+        <canvas id="myChart"></canvas>
+      </div>
     </>
   );
 }

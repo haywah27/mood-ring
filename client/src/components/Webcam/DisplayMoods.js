@@ -19,12 +19,13 @@ function DisplayMoods(props) {
   console.log(profile);
   console.log(moodState);
 
-  function handleAPI() {
+  function handleAPI(mood) {
     if (localStorage.getItem("Profile") !== null) {
+      console.log("profile[0].googleId: ", profile[0].googleId)
       API.createMood({
         // name: profile[0].name,
-        googleId: profile.googleId,
-        expressions: {expressionState},
+        googleId: profile[0].googleId,
+        expressions: mood,
       }).then((res) => {
         console.log(res);
       });
@@ -61,7 +62,7 @@ function DisplayMoods(props) {
         );
         API.createMood({
           // name: profile[0].name,
-          googleId: profile.googleId,
+          googleId: profile[0].googleId,
           expressions: "Angry",
         }).then((res) => {
           console.log(res);
@@ -82,7 +83,7 @@ function DisplayMoods(props) {
         );
         API.createMood({
           // name: profile[0].name,
-          googleId: profile.googleId,
+          googleId: profile[0].googleId,
           expressions: "Disgusted",
         }).then((res) => {
           console.log(res);
@@ -103,7 +104,7 @@ function DisplayMoods(props) {
         );
         API.createMood({
           // name: profile[0].name,
-          googleId: profile.googleId,
+          googleId: profile[0].googleId,
           expressions: "Fearful",
         }).then((res) => {
           console.log(res);
@@ -117,12 +118,12 @@ function DisplayMoods(props) {
         happy > surprised
       ) {
         console.log("Your mood is: Happy");
-        setExpressionState("Happy");
+        setExpressionState("Happy")
         props.setMood("Happy");
         setExpressionMsgState(
           "Alright!! How about a quote to keep that GREAT mood going?"
         );
-        handleAPI();
+        handleAPI("Happy");
         // if (localStorage.getItem("Profile") !== null) {
         //   API.createMood({
         //     // name: profile[0].name,
@@ -148,7 +149,7 @@ function DisplayMoods(props) {
         );
         API.createMood({
           // name: profile[0].name,
-          googleId: profile.googleId,
+          googleId: profile[0].googleId,
           expressions: "Neutral",
         }).then((res) => {
           console.log(res);
@@ -169,7 +170,7 @@ function DisplayMoods(props) {
         );
         API.createMood({
           // name: profile[0].name,
-          googleId: profile.googleId,
+          googleId: profile[0].googleId,
           expressions: "Sad",
         }).then((res) => {
           console.log(res);
@@ -190,7 +191,7 @@ function DisplayMoods(props) {
         );
         API.createMood({
           // name: profile[0].name,
-          googleId: profile.googleId,
+          googleId: profile[0].googleId,
           expressions: "Surprised",
         }).then((res) => {
           console.log(res);

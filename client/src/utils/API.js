@@ -3,13 +3,14 @@ import axios from "axios";
 export default {
     
     createMood: function(data) {
+        console.log("data: ",data)
         return axios.post("/api/mood", {
             // name: data.name,
             googleId: data.googleId,
             expressions: data.expressions
         })
         .then(function (response) {
-        console.log(response);
+        console.log("create mood res",response);
         alert('Mood Has Been Saved!')
         })
         .catch(function (error) {
