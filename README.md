@@ -36,16 +36,15 @@ This application implements the following:
 ## Technologies
 * Javascript
 * HTML/CSS
-* JQuery
-* Node
-* NPM Express
-* NPM Express-Handlebars
-* NPM MySQL
-* NPM Sequelize
-* NPM Multer
-* Heroku
-* MySQL
-* MySQL Workbench
+* React
+* Axios
+* Bootstrap
+* Express
+* If-env
+* MongoDB
+* React-boostrap
+* React-google-login
+* React-router-dom
 
 ## ## Deployment (Heroku) - Live Link
 - [Heroku](LINK HERE)
@@ -65,12 +64,16 @@ Application enabled using the following sources:
 <!-- * [NPM Bcrypt](https://www.npmjs.com/package/bcryptjs)   -->
 
 ## Authors
-Created by ***Names*** - feel free to contact us to collaborate on this project or any other project!
+Created by Michael, Kyle, Hayley, Yvette and Amiee - feel free to contact us to collaborate on this project or any other project!
 <!-- 
-* [Sam's LinkedIn](https://www.linkedin.com/in/samuelerogers/)
-* [Josh's LinkedIn](https://www.linkedin.com/in/joshua-rehanek/)
-* [Aimee's LinkedIn](https://www.linkedin.com/in/aimee-mattson-bb060398/)
+* [Michael Alexander LinkedIn](https://www.linkedin.com/in/michael-m-alexander/)
+* [Kyle Gates LinkedIn](https://www.linkedin.com/in/kyle-gates-62a131184/)
+* [Hayley Wahlroos LinkedIn](https://www.linkedin.com/in/wahlroos/)
+* [Yvette Henderson LinkedIn](https://www.linkedin.com/in/yvette-henderson/)
+* [Aimee Mattson LinkedIn](https://www.linkedin.com/in/aimee-mattson-bb060398/)
 
-* [Sam's Portfolio](https://samrogers15.github.io/Current_Portfolio/index.html)
-* [Josh's Portfolio](https://joshrehanek.github.io/my-portfolio/)
-* [Aimee's Portfolio](https://jinxdoll.github.io/HW-2-portfolio-mattsonaimee/) -->
+* [Michael Alexander](https://github.com/ALEX00100alex)
+* [Kyle Gates](https://github.com/gateskyle)
+* [Hayley Wahlroos](https://github.com/haywah27)
+* [Yvette Henderson](https://github.com/yvettehenderson)
+* [Aimee Mattson ](https://github.com/jinxdoll)

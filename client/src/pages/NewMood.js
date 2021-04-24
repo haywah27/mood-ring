@@ -3,7 +3,7 @@ import "./NewMood.css";
 import { Jumbotron, Container, Button } from "react-bootstrap";
 import Webcam from "../components/Webcam/DisplayMoods";
 import axios from "axios";
-
+import Navigation from "../components/Nav/index"
 
 function Home() {
 
@@ -117,6 +117,7 @@ console.log("isMoodSet:", isMoodSet);
   
 return (
     <div>
+      <Navigation />
       <Container>
         <Jumbotron className="dimension text-center" fluid>
           <Container>

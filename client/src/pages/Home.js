@@ -4,11 +4,12 @@ import { Jumbotron, Container, Button } from "react-bootstrap";
 import Navigation from "../components/Nav/index"
 import LogoutNav from "../components/Nav/logoutNav"
 
-function Home({isLoggedIn}) {
+function Home() {
   return (
     <div>
-      {!isLoggedIn && (<Navigation />)}
-      {isLoggedIn && (<LogoutNav />)}
+      {/* {!isLoggedIn && (<Navigation />)}
+      {isLoggedIn && (<LogoutNav />)} */}
+      <Navigation />
       <Container>
         <Jumbotron className="dimension text-center" fluid>
           <Container>

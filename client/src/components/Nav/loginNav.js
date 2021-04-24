@@ -1,10 +1,9 @@
 import React from "react";
-// import { Link, withRouter } from "react-router-dom";
 import { Navbar, Nav } from "react-bootstrap";
-import Login from "../../pages/Login"
+import Login from "../../pages/Login";
 import "./nav.css";
 
-function LogoutNav() {
+function LoginNav() {
   return (
     <Navbar collapseOnSelect expand="lg" className="nav" variant="dark">
       <Navbar.Brand href="/" className="navbar-header">
@@ -23,7 +22,7 @@ function LogoutNav() {
           <Nav.Link className="navbar-link" href="/user">
             My Profile
           </Nav.Link>
-          <Nav.Link className="navbar-link" href="/">
+          <Nav.Link className="navbar-link" href="/login">
             <Login></Login>
           </Nav.Link>
         </Nav>
@@ -32,4 +31,4 @@ function LogoutNav() {
   );
 }
 
-export default LogoutNav;
+export default LoginNav;
