@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const PORT = process.env.PORT || 3001;
 const app = express();
 const MoodsApiRoute = require('./routes/MoodsApi');
+require('dotenv').config()
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
@@ -27,7 +28,6 @@ app.get('*', (req, res) => {
 
 mongoose.connect(
   process.env.MONGODB_URI ||
-    'mongodb+srv://aimee_admin:AimeePW@reactmoodring.gzg5j.mongodb.net/Mood-ring',
   { useNewUrlParser: true },
   { useUnifiedTechnology: true }
 );
