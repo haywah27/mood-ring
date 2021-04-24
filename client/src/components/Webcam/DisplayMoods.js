@@ -60,13 +60,7 @@ function DisplayMoods(props) {
         setExpressionMsgState(
           "Would you like to check out a puppy gif to calm you down a bit?"
         );
-        API.createMood({
-          // name: profile[0].name,
-          googleId: profile[0].googleId,
-          expressions: "Angry",
-        }).then((res) => {
-          console.log(res);
-        });
+        handleAPI("Angry");
       } else if (
         disgusted > angry &&
         disgusted > fearful &&
@@ -81,13 +75,7 @@ function DisplayMoods(props) {
         setExpressionMsgState(
           "Would you like an inspirational quote to make that gross feeling go away?"
         );
-        API.createMood({
-          // name: profile[0].name,
-          googleId: profile[0].googleId,
-          expressions: "Disgusted",
-        }).then((res) => {
-          console.log(res);
-        });
+        handleAPI("Disgusted");
       } else if (
         fearful > angry &&
         fearful > disgusted &&
@@ -102,13 +90,7 @@ function DisplayMoods(props) {
         setExpressionMsgState(
           "You know what you should really fear? Dad jokes!!"
         );
-        API.createMood({
-          // name: profile[0].name,
-          googleId: profile[0].googleId,
-          expressions: "Fearful",
-        }).then((res) => {
-          console.log(res);
-        });
+        handleAPI("Fearful");
       } else if (
         happy > angry &&
         happy > disgusted &&
@@ -124,15 +106,6 @@ function DisplayMoods(props) {
           "Alright!! How about a quote to keep that GREAT mood going?"
         );
         handleAPI("Happy");
-        // if (localStorage.getItem("Profile") !== null) {
-        //   API.createMood({
-        //     // name: profile[0].name,
-        //     googleId: profile.googleId,
-        //     expressions: "Happy"
-        //   }).then((res)=> {
-        //     console.log(res)
-        //   })
-        // }
       } else if (
         neutral > angry &&
         neutral > disgusted &&
@@ -147,13 +120,7 @@ function DisplayMoods(props) {
         setExpressionMsgState(
           "We have just the right thing to give that mood a jump start, would you like to check out a meme?"
         );
-        API.createMood({
-          // name: profile[0].name,
-          googleId: profile[0].googleId,
-          expressions: "Neutral",
-        }).then((res) => {
-          console.log(res);
-        });
+        handleAPI("Neutral");
       } else if (
         sad > angry &&
         sad > disgusted &&
@@ -168,13 +135,7 @@ function DisplayMoods(props) {
         setExpressionMsgState(
           "Some terrible dad jokes will help turn that frown upside down!"
         );
-        API.createMood({
-          // name: profile[0].name,
-          googleId: profile[0].googleId,
-          expressions: "Sad",
-        }).then((res) => {
-          console.log(res);
-        });
+        handleAPI("Sad");
       } else if (
         surprised > angry &&
         surprised > disgusted &&
@@ -189,13 +150,7 @@ function DisplayMoods(props) {
         setExpressionMsgState(
           "Uh oh, did you see a ghost? You know what's even more surprising?? A random gif!!"
         );
-        API.createMood({
-          // name: profile[0].name,
-          googleId: profile[0].googleId,
-          expressions: "Surprised",
-        }).then((res) => {
-          console.log(res);
-        });
+        handleAPI("Surprised");
       } else {
         alert("An error has occurred");
       }
