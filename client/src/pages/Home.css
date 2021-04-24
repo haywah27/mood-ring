@@ -9,6 +9,7 @@
   opacity: 0.9;
   margin-top: 3rem;
   box-shadow: 0px 0px 40px 20px black;
+  padding: 9rem;
 }
 
 .title {
@@ -16,7 +17,7 @@
 }
 
 .body {
-  font-size: 1.4em;
+  font-size: 1.4em!important;
   line-height: 40px;
 }
 
@@ -36,3 +37,26 @@
 .getStartedButton:hover {
   background-color: #468499;
 }
+
+@media (max-width: 575.98px) { 
+  .dimension {
+  padding: 2rem;
+  
+  } 
+}
+
+@media (min-width: 576px) { 
+  .dimension {
+    padding: 3rem;
+  }
+}
+
+
+@media (min-width: 992px) { 
+  .dimension {
+    padding: 9rem;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+}
+

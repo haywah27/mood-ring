@@ -14,10 +14,23 @@ function DisplayMoods(props) {
 
   const [isLoaded, setIsLoaded] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
- 
- const profile = JSON.parse(localStorage.getItem('Profile'));
+
+  const profile = JSON.parse(localStorage.getItem("Profile"));
   console.log(profile);
   console.log(moodState);
+
+  function handleAPI(mood) {
+    if (localStorage.getItem("Profile") !== null) {
+      console.log("profile[0].googleId: ", profile[0].googleId)
+      API.createMood({
+        // name: profile[0].name,
+        googleId: profile[0].googleId,
+        expressions: mood,
+      }).then((res) => {
+        console.log(res);
+      });
+    }
+  }
 
   function click() {
     if (moodState.length === 0) {
@@ -44,14 +57,10 @@ function DisplayMoods(props) {
         console.log("Your mood is: Angry");
         setExpressionState("Angry");
         props.setMood("Angry");
-        setExpressionMsgState("Would you like to check out a puppy gif to calm you down a bit?");
-        API.createMood({
-          // name: profile[0].name,
-          googleId: profile.googleId,
-          expressions: "Angry"
-        }).then((res)=> {
-          console.log(res)
-        })
+        setExpressionMsgState(
+          "Would you like to check out a puppy gif to calm you down a bit?"
+        );
+        handleAPI("Angry");
       } else if (
         disgusted > angry &&
         disgusted > fearful &&
@@ -63,14 +72,10 @@ function DisplayMoods(props) {
         console.log("Your mood is: Disgusted");
         setExpressionState("Disgusted");
         props.setMood("Disgusted");
-        setExpressionMsgState("Would you like an inspirational quote to make that gross feeling go away?");
-        API.createMood({
-          // name: profile[0].name,
-          googleId: profile.googleId,
-          expressions: "Disgusted"
-        }).then((res)=> {
-          console.log(res)
-        })
+        setExpressionMsgState(
+          "Would you like an inspirational quote to make that gross feeling go away?"
+        );
+        handleAPI("Disgusted");
       } else if (
         fearful > angry &&
         fearful > disgusted &&
@@ -82,14 +87,10 @@ function DisplayMoods(props) {
         console.log("Your mood is: Fearful");
         setExpressionState("Fearful");
         props.setMood("Fearful");
-        setExpressionMsgState("You know what you should really fear? Dad jokes!!");
-        API.createMood({
-          // name: profile[0].name,
-          googleId: profile.googleId,
-          expressions: "Fearful"
-        }).then((res)=> {
-          console.log(res)
-        })
+        setExpressionMsgState(
+          "You know what you should really fear? Dad jokes!!"
+        );
+        handleAPI("Fearful");
       } else if (
         happy > angry &&
         happy > disgusted &&
@@ -99,16 +100,12 @@ function DisplayMoods(props) {
         happy > surprised
       ) {
         console.log("Your mood is: Happy");
-        setExpressionState("Happy");
+        setExpressionState("Happy")
         props.setMood("Happy");
-        setExpressionMsgState("Alright!! How about a quote to keep that GREAT mood going?");
-        API.createMood({
-          // name: profile[0].name,
-          googleId: profile.googleId,
-          expressions: "Happy"
-        }).then((res)=> {
-          console.log(res)
-        })
+        setExpressionMsgState(
+          "Alright!! How about a quote to keep that GREAT mood going?"
+        );
+        handleAPI("Happy");
       } else if (
         neutral > angry &&
         neutral > disgusted &&
@@ -120,14 +117,10 @@ function DisplayMoods(props) {
         console.log("Your mood is: Neutral");
         setExpressionState("Neutral");
         props.setMood("Neutral");
-        setExpressionMsgState("We have just the right thing to give that mood a jump start, would you like to check out a meme?");
-        API.createMood({
-          // name: profile[0].name,
-          googleId: profile.googleId,
-          expressions: "Neutral"
-        }).then((res)=> {
-          console.log(res)
-        })
+        setExpressionMsgState(
+          "We have just the right thing to give that mood a jump start, would you like to check out a meme?"
+        );
+        handleAPI("Neutral");
       } else if (
         sad > angry &&
         sad > disgusted &&
@@ -139,14 +132,10 @@ function DisplayMoods(props) {
         console.log("Your mood is: Sad");
         setExpressionState("Sad");
         props.setMood("Sad");
-        setExpressionMsgState("Some terrible dad jokes will help turn that frown upside down!");
-        API.createMood({
-          // name: profile[0].name,
-          googleId: profile.googleId,
-          expressions: "Sad"
-        }).then((res)=> {
-          console.log(res)
-        })
+        setExpressionMsgState(
+          "Some terrible dad jokes will help turn that frown upside down!"
+        );
+        handleAPI("Sad");
       } else if (
         surprised > angry &&
         surprised > disgusted &&
@@ -158,36 +147,37 @@ function DisplayMoods(props) {
         console.log("Your mood is: Surprised");
         setExpressionState("Surprised");
         props.setMood("Surprised");
-        setExpressionMsgState("Uh oh, did you see a ghost? You know what's even more surprising?? A random gif!!");
-        API.createMood({
-          // name: profile[0].name,
-          googleId: profile.googleId,
-          expressions: "Surprised"
-        }).then((res)=> {
-          console.log(res)
-        })
+        setExpressionMsgState(
+          "Uh oh, did you see a ghost? You know what's even more surprising?? A random gif!!"
+        );
+        handleAPI("Surprised");
       } else {
         alert("An error has occurred");
       }
-        props.setIsMoodSet(true);
+      props.setIsMoodSet(true);
     }
   }
 
   return (
     <div className="WebcamFinal">
-      <Webcam setIsLoaded= {setIsLoaded} setIsLoading= {setIsLoading} setMoodState={setMoodState} />
+      <Webcam
+        setIsLoaded={setIsLoaded}
+        setIsLoading={setIsLoading}
+        setMoodState={setMoodState}
+      />
 
       {isLoaded && (
         <>
-        <Button className="moodButton" onClick={click}>
-          Check Mood
-        </Button>
-         <div className="expression">Your Current Mood Is: {expressionState}</div>
-         <div className="expressionMsg">{expressionMsgState}</div>
-         </>
+          <Button className="moodButton" onClick={click}>
+            Check Mood
+          </Button>
+          <div className="expression">
+            Your Current Mood Is: {expressionState}
+          </div>
+          <div className="expressionMsg">{expressionMsgState}</div>
+        </>
       )}
-    {isLoading && <LoadingSpinner/>}
-     
+      {isLoading && <LoadingSpinner />}
     </div>
   );
 }

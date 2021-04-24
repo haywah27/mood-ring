@@ -1,21 +1,34 @@
 import React from "react";
 import "./Home.css";
 import { Jumbotron, Container, Button } from "react-bootstrap";
+import Navigation from "../components/Nav/index";
 
 function Home() {
   return (
     <div>
+      <Navigation />
       <Container>
         <Jumbotron className="dimension text-center" fluid>
           <Container>
-            <h1 className="title">Welcome to Mood Ring</h1>
+            <h1 className="title">Welcome to Mood Ring!</h1>
+            <hr />
             <h5 className="body">
-              We work to determine your current mood and provide content to
-              match!
+              Explore our facial recognition technology to capture your current
+              emotion and we'll provide content that serves as a type of
+              "remedy" or "boost" to your current emotion.
+              <hr />
+              Users who login will be able to see a history of previous moods or
+              you can decide to just play with the app without having to create
+              an account.
             </h5>
             <br />
+            <br />
+            <Button href="/login" className="getStartedButton" size="huge">
+              Login
+            </Button>
+            <div className="subtitle"> OR </div>
             <Button href="/new-mood" className="getStartedButton" size="huge">
-              Get Started
+              Check Mood
             </Button>
           </Container>
         </Jumbotron>

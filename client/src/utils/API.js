@@ -3,13 +3,14 @@ import axios from "axios";
 export default {
     
     createMood: function(data) {
+        console.log("data: ",data)
         return axios.post("/api/mood", {
             // name: data.name,
             googleId: data.googleId,
             expressions: data.expressions
         })
         .then(function (response) {
-        console.log(response);
+        console.log("create mood res",response);
         alert('Mood Has Been Saved!')
         })
         .catch(function (error) {
@@ -36,7 +37,7 @@ export default {
         .then(function (response) {
         console.log(response);
         if(response.data.length) {
-            alert(`${data.name} is now logged in`)
+            // alert(`${data.name} is now logged in`)
             localStorage.setItem('Profile', JSON.stringify(response.data));
         } else {
             return axios.post('/api/user', {
@@ -48,7 +49,7 @@ export default {
             .then(function (response) {
             console.log(response);
             localStorage.setItem('Profile', JSON.stringify(response.data));
-            alert('User Has Been Saved')
+            // alert('User Has Been Saved')
             })
             .catch(function (error) {
             console.log(error);
@@ -58,5 +59,14 @@ export default {
         .catch(function (error) {
         console.log(error);
         })
+
+
     }
+
+    // findProfileUser: function(data){
+    //     return axios.get(`/api/user/${data}`)
+    //     .then(function (response){
+    //         return (response)
+    //     })
+    // }
 }
