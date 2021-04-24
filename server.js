@@ -55,4 +55,3 @@ app.listen(PORT, () => {
 });
 
 
-Refactor mongoose.connect route to be hosted by mongoDBAtlas instead of localhost. 
