@@ -22,11 +22,6 @@ function Home() {
               an account.
             </h5>
             <br />
-            <br />
-            <Button href="/login" className="getStartedButton" size="huge">
-              Login
-            </Button>
-            <div className="subtitle"> OR </div>
             <Button href="/new-mood" className="getStartedButton" size="huge">
               Check Mood
             </Button>
