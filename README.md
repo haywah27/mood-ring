@@ -2,7 +2,7 @@
 Explore our facial recognition technology to capture your current emotion and the Mood Ring App will provide content that serves as a type of "remedy" or "boost" to your current emotion. Users who login are able to see a history of previous moods as a clean, accessible graph.
 
 ## Deployment (Heroku) - Live Link
-### [Mood Ring](moody-ring.herokuapp.com/)
+### [Mood Ring](https://moody-ring.herokuapp.com/)
 
 ## Table of contents
 - [General Info](#general-info)
