@@ -61,12 +61,12 @@ export default {
         })
 
 
-    }
+    },
 
-    // findProfileUser: function(data){
-    //     return axios.get(`/api/user/${data}`)
-    //     .then(function (response){
-    //         return (response)
-    //     })
-    // }
+    updateLocalStorage: function(data){
+        return axios.get(`/api/user/${data}`)
+        .then(function (response){
+            localStorage.setItem('Profile', JSON.stringify(response.data))
+        })
+    }
 }
