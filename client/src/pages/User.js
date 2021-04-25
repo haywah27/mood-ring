@@ -26,14 +26,18 @@ function User() {
             <hr />
             <h1 className="subtitle">Here's Your Mood History</h1>
             <ListGroup variant="flush" className="expressionHistory">
-              {localUser[0].expressions.length > 0 ? (
-                localUser[0].expressions.map((data) => {
-                  return(
-                    <ListGroup.Item>Expression: {data}</ListGroup.Item>
-                  )
-                }) 
+              {localUser != null ? (
+                localUser[0].expressions.length > 0 ? (
+                  localUser[0].expressions.map((data) => {
+                    return(
+                      <ListGroup.Item>Expression: {data}</ListGroup.Item>
+                    )
+                  }) 
+                ) : (
+                  <ListGroup.Item>No Moods Saved Yet</ListGroup.Item>
+                )
               ) : (
-                <ListGroup.Item>No Moods Saved Yet</ListGroup.Item>
+                <ListGroup.Item>No User Logged In, Refresh Page After Login</ListGroup.Item>
               )}
               {/* <ListGroup.Item>Expression :</ListGroup.Item>
               <ListGroup.Item>Expression</ListGroup.Item>
