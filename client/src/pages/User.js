@@ -3,17 +3,17 @@ import "./User.css";
 import Navigation from "../components/Nav/index";
 import { Jumbotron, Container, ListGroup } from "react-bootstrap";
 import API from "../utils/API";
+import Chart from "../components/Chart"
 
 // class User extends Component{
 // window.location.reload();
 
-
-
 function User() {
+  
+
   const localUser = JSON.parse(localStorage.getItem("Profile"));
   let yourMom;
   let moodList;
-
 
   function getMoods() {
     if (localStorage.getItem("Profile") !== null) {
@@ -28,7 +28,8 @@ function User() {
           <hr />
           <h1 className="subtitle">Here's Your Mood History</h1>
           <ListGroup variant="flush" className="expressionHistory">
-            {moodList.slice(Math.max(moodList.length - 5, 0))}
+            {/* {moodList.slice(Math.max(moodList.length - 5, 0))} */}
+            {moodList}
           </ListGroup>
           <br />
           <br />
@@ -39,13 +40,15 @@ function User() {
     }
   }
 
-
   return (
     <>
       <Navigation />
       <Container>
         <Jumbotron className="dimension text-center" fluid>
-          <Container>{getMoods()}</Container>
+          <Container>
+            {getMoods()}
+            <Chart></Chart>
+          </Container>
         </Jumbotron>
       </Container>
     </>
