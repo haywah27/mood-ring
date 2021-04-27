@@ -2,11 +2,11 @@ import React from "react";
 import { Pie, Doughnut } from "react-chartjs-2";
 
 function Chart() {
-  let yourMom;
+  let moodArr;
   const localUser = JSON.parse(localStorage.getItem("Profile"));
 
   if (localStorage.getItem("Profile") !== null) {
-    yourMom = localUser[0].expressions;
+    moodArr = localUser[0].expressions;
   }
 
   let count = 0;
@@ -19,13 +19,13 @@ function Chart() {
     return count;
   }
 
-  const angryCount = countValues(yourMom, "Angry");
-  const disgustedCount = countValues(yourMom, "Disgusted");
-  const fearfulCount = countValues(yourMom, "Fearful");
-  const happyCount = countValues(yourMom, "Happy");
-  const neutralCount = countValues(yourMom, "Neutral");
-  const sadCount = countValues(yourMom, "Sad");
-  const surprisedCount = countValues(yourMom, "Surprised");
+  const angryCount = countValues(moodArr, "Angry");
+  const disgustedCount = countValues(moodArr, "Disgusted");
+  const fearfulCount = countValues(moodArr, "Fearful");
+  const happyCount = countValues(moodArr, "Happy");
+  const neutralCount = countValues(moodArr, "Neutral");
+  const sadCount = countValues(moodArr, "Sad");
+  const surprisedCount = countValues(moodArr, "Surprised");
 
   const state = {
     labels: [
