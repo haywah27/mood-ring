@@ -50,13 +50,13 @@ function Chart() {
           "#ffa500",
         ],
         hoverBackgroundColor: [
-          "#501800",
-          "#4B5000",
-          "#175000",
-          "#003350",
-          "#35014F",
-          "#35014F",
-          "#35014F",
+          "#730000",
+          "#8CA340",
+          "#261414",
+          "#BD6157",
+          "#4A4A48",
+          "#2F556E",
+          "#C27E00",
         ],
         data: [
           angryCount,
@@ -76,20 +76,12 @@ function Chart() {
         data={state}
         options={{
           plugins: {
-            title: {
-              display: true,
-              text: "Your Complete Mood History",
-              font: {
-                size: 40,
-                family: "Courier New",
-              },
-            },
             legend: {
               display: true,
               position: "top",
               labels: {
                 font: {
-                  size: 20,
+                  size: 18,
                   family: "Courier New",
                 },
               },

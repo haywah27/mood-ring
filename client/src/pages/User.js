@@ -20,14 +20,16 @@ function User() {
     if (localUser != null) {
       userMoods = localUser[0].expressions;
       if (userMoods.length > 0) {
-        const moodMap = userMoods.map((data) => {
-          return <ListGroup.Item>{data}</ListGroup.Item>;
+        const moodList = userMoods.map((data) => {
+          return <ListGroup.Item className="body">{data}</ListGroup.Item>;
         });
         return (
           <>
             <h1 className="subtitle">Here's Your Recent Mood History</h1>
-            {moodMap}
-            <hr />
+            {moodList.slice(Math.max(moodList.length - 5, 0))}
+            <br />
+            <h1 className="subtitle">Your Complete Mood History</h1>
+
             <Chart></Chart>
           </>
         );
