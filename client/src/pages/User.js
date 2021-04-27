@@ -2,17 +2,48 @@ import React, { useState } from "react";
 import "./User.css";
 import Navigation from "../components/Nav/index";
 import { Jumbotron, Container, ListGroup } from "react-bootstrap";
-import API from "../utils/API";
+import Chart from "../components/Chart/Chart";
 
-// class User extends Component{
 function User() {
   const localUser = JSON.parse(localStorage.getItem("Profile"));
-  
+  let userMoods;
+
   function userLoggedIn() {
     if (localStorage.getItem("Profile") !== null) {
-      return (localUser[0].name);
+      return localUser[0].name;
     } else {
-      return ("User Not Logged In")
+      return "User Not Logged In";
+    }
+  }
+
+  function displayHistory() {
+    if (localUser != null) {
+      userMoods = localUser[0].expressions;
+      if (userMoods.length > 0) {
+        const moodList = userMoods.map((data) => {
+          return <ListGroup.Item className="body">{data}</ListGroup.Item>;
+        });
+        return (
+          <>
+            <h1 className="subtitle">Here's Your Recent Mood History</h1>
+            {moodList.slice(Math.max(moodList.length - 5, 0))}
+            <br />
+            <h1 className="subtitle">Your Complete Mood History</h1>
+
+            <Chart></Chart>
+          </>
+        );
+      } else {
+        return <h1 className="subtitle">No Moods Saved Yet</h1>;
+      }
+    } else {
+      return (
+        <h1 className="subtitle">
+          Login to see mood history.
+          <br />
+          Refresh Page After Login.
+        </h1>
+      );
     }
   }
 
@@ -24,26 +55,8 @@ function User() {
           <Container>
             <h1 className="title">{userLoggedIn()}</h1>
             <hr />
-            <h1 className="subtitle">Here's Your Mood History</h1>
             <ListGroup variant="flush" className="expressionHistory">
-              {localUser != null ? (
-                localUser[0].expressions.length > 0 ? (
-                  localUser[0].expressions.map((data) => {
-                    return(
-                      <ListGroup.Item>Expression: {data}</ListGroup.Item>
-                    )
-                  }) 
-                ) : (
-                  <ListGroup.Item>No Moods Saved Yet</ListGroup.Item>
-                )
-              ) : (
-                <ListGroup.Item>No User Logged In, Refresh Page After Login</ListGroup.Item>
-              )}
-              {/* <ListGroup.Item>Expression :</ListGroup.Item>
-              <ListGroup.Item>Expression</ListGroup.Item>
-              <ListGroup.Item>Expression</ListGroup.Item>
-              <ListGroup.Item>Expression</ListGroup.Item>
-              <ListGroup.Item>Expression</ListGroup.Item> */}
+              {displayHistory()}
             </ListGroup>
             <br />
             <br />
