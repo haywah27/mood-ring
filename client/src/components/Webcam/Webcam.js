@@ -68,7 +68,7 @@ const WebcamCapture = ({ setMoodState, setIsLoaded, setIsLoading }) => {
       <br />
       {viewCaptureButton && (
         <Button
-          className="moodButton"
+          className="moodButton btn-huge"
           onClick={() => {
             capture();
           }}
