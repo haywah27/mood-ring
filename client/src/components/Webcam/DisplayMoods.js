@@ -21,8 +21,8 @@ function DisplayMoods(props) {
 
   function handleAPI(mood) {
     if (localStorage.getItem("Profile") !== null) {
-      API.updateLocalStorage(profile[0].googleId)
-      console.log("profile[0].googleId: ", profile[0].googleId)
+      API.updateLocalStorage(profile[0].googleId);
+      console.log("profile[0].googleId: ", profile[0].googleId);
       API.createMood({
         googleId: profile[0].googleId,
         expressions: mood,
@@ -100,7 +100,7 @@ function DisplayMoods(props) {
         happy > surprised
       ) {
         console.log("Your mood is: Happy");
-        setExpressionState("Happy")
+        setExpressionState("Happy");
         props.setMood("Happy");
         setExpressionMsgState(
           "Alright!! How about a quote to keep that GREAT mood going?"
@@ -157,6 +157,9 @@ function DisplayMoods(props) {
       props.setIsMoodSet(true);
     }
   }
+  function reloadPage() {
+    window.location.reload();
+  }
 
   return (
     <div className="WebcamFinal">
@@ -170,6 +173,9 @@ function DisplayMoods(props) {
         <>
           <Button className="moodButton" onClick={click}>
             Check Mood
+          </Button>
+          <Button className="moodButton" onClick={reloadPage}>
+            New Mood
           </Button>
           <div className="expression">
             Your Current Mood Is: {expressionState}

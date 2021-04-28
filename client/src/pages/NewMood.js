@@ -145,8 +145,8 @@ function Home() {
         </Jumbotron>
         <Jumbotron className="dimension text-center" fluid>
           <Container>
-            <div className="subtitle">Mood Ring Suggests:</div>
-            {mood == "Neutral" || mood == "Sad"
+            <div className="subtitle">Moodring Suggests:</div>
+            {mood == "Fearful" || mood == "Sad"
               ? jokes.map((joke) => {
                   return (
                     <div key={joke._id} className="jokeContainer">

@@ -10,7 +10,7 @@ function Home() {
       <Container>
         <Jumbotron className="dimension text-center" fluid>
           <Container>
-            <h1 className="title">Welcome to Mood Ring!</h1>
+            <h1 className="title">Welcome to Moodring!</h1>
             <hr />
             <h5 className="body">
               Explore our facial recognition technology to capture your current
