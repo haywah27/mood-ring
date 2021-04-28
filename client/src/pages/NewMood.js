@@ -5,7 +5,7 @@ import Webcam from "../components/Webcam/DisplayMoods";
 import axios from "axios";
 import Navigation from "../components/Nav/index";
 
-function Home() {
+function NewMood() {
   const [isMoodSet, setIsMoodSet] = useState(false);
   const [jokes, setJokes] = useState([]);
   const [mood, setMood] = useState(false);
@@ -129,12 +129,12 @@ function Home() {
           <Container>
             <h1 className="title">Mood Catcher</h1>
             <h5 className="body">
-              How it works: <br /> 1. To get started, click "Capture Photo"
+              How it works:
+              <br /> 1. To get started, click "Capture Photo"
               <br /> 2. To see your current mood, click "Reveal Mood"
-              <br /> 3. Explore Moodring's suggested content 
-              <br /> 4. To capture a new mood, click "New Mood"
+              <br /> 3. Explore Moodring's suggested content
+              <br /> 4. To capture a new mood, click "New Reading"
               <br /> 5. Login to see your mood history
-
             </h5>
 
             <Webcam
@@ -144,7 +144,8 @@ function Home() {
             />
           </Container>
         </Jumbotron>
-        <Jumbotron className="dimension text-center" fluid>
+        {isMoodSet && (
+          <Jumbotron className="dimension text-center" fluid>
           <Container>
             <div className="subtitle">Moodring Suggests:</div>
             {mood == "Fearful" || mood == "Sad"
@@ -183,9 +184,12 @@ function Home() {
             )}
           </Container>
         </Jumbotron>
+
+        )}
+        
       </Container>
     </div>
   );
 }
 
-export default Home;
+export default NewMood;
