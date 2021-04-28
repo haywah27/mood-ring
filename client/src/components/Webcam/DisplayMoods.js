@@ -12,6 +12,7 @@ function DisplayMoods(props) {
   const [expressionState, setExpressionState] = useState("");
   const [expressionMsgState, setExpressionMsgState] = useState("");
 
+  const [showCurrentMood, setShowCurrentMood] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -155,10 +156,12 @@ function DisplayMoods(props) {
         alert("An error has occurred");
       }
       props.setIsMoodSet(true);
+      setShowCurrentMood(true);
     }
   }
   function reloadPage() {
     window.location.reload();
+    setShowCurrentMood(false);
   }
 
   return (
@@ -171,17 +174,21 @@ function DisplayMoods(props) {
 
       {isLoaded && (
         <>
-        <br />
+          <br />
           <Button className="moodButton" onClick={click}>
             Check Mood
           </Button>
           <Button className="moodButton" onClick={reloadPage}>
             New Mood
           </Button>
-          <div className="expression">
-            Your Current Mood Is: {expressionState}
-          </div>
-          <div className="expressionMsg">{expressionMsgState}</div>
+          {showCurrentMood && (
+            <>
+              <div className="expression">
+                Your Current Mood Is: {expressionState}
+              </div>
+              <div className="expressionMsg">{expressionMsgState}</div>
+            </>
+          )}
         </>
       )}
       {isLoading && <LoadingSpinner />}
