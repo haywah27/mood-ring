@@ -129,11 +129,12 @@ function Home() {
           <Container>
             <h1 className="title">Mood Catcher</h1>
             <h5 className="body">
-              How it works: <br /> 1. Click the button to start the live mood
-              reader
-              <br /> 2. Click the camera icon to capture your current mood
-              <br /> 3. Explore the remedy or boost to your mood
-              <br /> 4. Login to save your mood!
+              How it works: <br /> 1. To get started, click "Capture Photo"
+              <br /> 2. To see your current mood, click "Reveal Mood"
+              <br /> 3. Explore Moodring's suggested content 
+              <br /> 4. To capture a new mood, click "New Mood"
+              <br /> 5. Login to see your mood history
+
             </h5>
 
             <Webcam

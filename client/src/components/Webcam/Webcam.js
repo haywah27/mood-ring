@@ -73,7 +73,7 @@ const WebcamCapture = ({ setMoodState, setIsLoaded, setIsLoading }) => {
             capture();
           }}
         >
-          Capture photo
+          Capture Photo
         </Button>
       )}
     </>
