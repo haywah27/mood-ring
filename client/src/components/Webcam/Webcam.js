@@ -45,15 +45,26 @@ const WebcamCapture = ({ setMoodState, setIsLoaded, setIsLoading }) => {
         className="border"
       />
       <br />
-      <img
+      { externalImgSrc.source != "" ?
+        <img
         className="border"
         src={externalImgSrc.source}
         width="720px"
         height="406px"
         id="imageUpload"
         alt="Face will render here"
-        onerror='this.style.display = "none"'
-      />
+        />
+        :
+        <img
+        style={{display: "none"}}
+        className="border"
+        src={externalImgSrc.source}
+        width="720px"
+        height="406px"
+        id="imageUpload"
+        alt="Face will render here"
+        />
+      }
       <br />
       {viewCaptureButton && (
         <Button
