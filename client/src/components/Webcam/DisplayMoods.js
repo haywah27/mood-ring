@@ -21,9 +21,9 @@ function DisplayMoods(props) {
 
   function handleAPI(mood) {
     if (localStorage.getItem("Profile") !== null) {
+      API.updateLocalStorage(profile[0].googleId)
       console.log("profile[0].googleId: ", profile[0].googleId)
       API.createMood({
-        // name: profile[0].name,
         googleId: profile[0].googleId,
         expressions: mood,
       }).then((res) => {
@@ -61,7 +61,6 @@ function DisplayMoods(props) {
           "Would you like to check out a puppy gif to calm you down a bit?"
         );
         handleAPI("Angry");
-        API.updateLocalStorage(profile[0].googleId)
       } else if (
         disgusted > angry &&
         disgusted > fearful &&
@@ -77,7 +76,6 @@ function DisplayMoods(props) {
           "Would you like an inspirational quote to make that gross feeling go away?"
         );
         handleAPI("Disgusted");
-        API.updateLocalStorage(profile[0].googleId)
       } else if (
         fearful > angry &&
         fearful > disgusted &&
@@ -93,7 +91,6 @@ function DisplayMoods(props) {
           "You know what you should really fear? Dad jokes!!"
         );
         handleAPI("Fearful");
-        API.updateLocalStorage(profile[0].googleId)
       } else if (
         happy > angry &&
         happy > disgusted &&
@@ -109,7 +106,6 @@ function DisplayMoods(props) {
           "Alright!! How about a quote to keep that GREAT mood going?"
         );
         handleAPI("Happy");
-        API.updateLocalStorage(profile[0].googleId)
       } else if (
         neutral > angry &&
         neutral > disgusted &&
@@ -125,7 +121,6 @@ function DisplayMoods(props) {
           "We have just the right thing to give that mood a jump start, would you like to check out a meme?"
         );
         handleAPI("Neutral");
-        API.updateLocalStorage(profile[0].googleId)
       } else if (
         sad > angry &&
         sad > disgusted &&
@@ -141,7 +136,6 @@ function DisplayMoods(props) {
           "Some terrible dad jokes will help turn that frown upside down!"
         );
         handleAPI("Sad");
-        API.updateLocalStorage(profile[0].googleId)
       } else if (
         surprised > angry &&
         surprised > disgusted &&
@@ -157,7 +151,6 @@ function DisplayMoods(props) {
           "Uh oh, did you see a ghost? You know what's even more surprising?? A random gif!!"
         );
         handleAPI("Surprised");
-        API.updateLocalStorage(profile[0].googleId)
       } else {
         alert("An error has occurred");
       }
