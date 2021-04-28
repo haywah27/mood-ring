@@ -7,7 +7,7 @@ function LoginNav() {
   return (
     <Navbar collapseOnSelect expand="lg" className="nav" variant="dark">
       <Navbar.Brand href="/" className="navbar-header">
-        Mood Ring
+        Moodring
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav" bg="dark" variant="dark">

@@ -51,6 +51,7 @@ const WebcamCapture = ({ setMoodState, setIsLoaded, setIsLoading }) => {
         height="406px"
         id="imageUpload"
         alt="Face will render here"
+        onerror='this.style.display = "none"'
       />
       <br />
       <Button
