@@ -175,11 +175,11 @@ function DisplayMoods(props) {
       {isLoaded && (
         <>
           <br />
-          <Button className="moodButton" onClick={click}>
-            Check Mood
+          <Button className="moodButton btn-md" onClick={click}>
+            Reveal Mood
           </Button>
-          <Button className="moodButton" onClick={reloadPage}>
-            New Mood
+          <Button className="moodButton btn-md" onClick={reloadPage}>
+            New Reading
           </Button>
           {showCurrentMood && (
             <>
